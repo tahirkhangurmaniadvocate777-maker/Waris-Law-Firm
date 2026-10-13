@@ -1,0 +1,28 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+Case Title: State VERSUS {{accused_name}}
+FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+APPLICATION FOR SUMMONING OF RELEVANT WITNESSES TO RECORD EVIDENCE.
+
+Respectfully Sheweth:
+
+1. That the above-titled trial case is fixed before this Honorable Court for recording of evidence.
+
+2. That the testimony of the following witnesses is vital for just decision of the case:
+   a. {{witness_1_name}}, Resident of {{witness_1_address}}
+   b. {{witness_2_name}}, Resident of {{witness_2_address}}
+
+3. That without the intervention of this Honorable Court, the said witnesses cannot appear independently to record their evidence.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Issue formal witness summons for attendance of the above-named witnesses on the next date of hearing.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

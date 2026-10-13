@@ -1,0 +1,28 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+State VERSUS {{accused_name}}
+FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+APPLICATION FOR HOLDING OF IDENTIFICATION PARADE OF THE ACCUSED PERSON(S)
+
+Respectfully Sheweth:
+
+1. That the above-titled case is pending investigation / trial before the competent forum.
+
+2. That the accused {{accused_name}} was not previously known to the eye-witnesses, and a fair identification parade is necessary for just decision of the case.
+
+3. That the proposed parade particulars are as under: {{offense_description}}.
+
+4. That the ends of justice require that an identification parade be conducted in accordance with law and settled practice.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Direct that an identification parade of the accused be held under proper judicial / magisterial supervision.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

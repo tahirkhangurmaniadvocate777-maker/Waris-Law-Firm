@@ -1,0 +1,43 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE, {{court_location}}
+
+In the matter of:
+{{plaintiff_name}} 									... PLAINTIFF
+                                VERSUS
+{{defendant_name}} 									... DEFENDANT
+
+ANNEXURE-B: ITEMIZED LIST OF DOWRY ARTICLES (JAHEZ) AND BRIDAL GIFTS (BARI) 
+RETAINED ILLEGALLY BY THE DEFENDANT
+
+
+SR. NO. | ITEM NAME & DESCRIPTION              | QTY    | ESTIMATED VALUE (PKR)
+================================================================================
+1.      | {{furniture_set_description}}        | 1 Set  | {{furniture_value}}
+2.      | {{fridge_or_electronics_desc}}      | 1 Unit | {{electronics_value}}
+3.      | {{washing_machine_desc}}             | 1 Unit | {{washing_machine_value}}
+4.      | {{gold_ornaments_weight_carat}}      | {{qty}}| {{gold_market_value}}
+5.      | {{crockery_and_kitchenware}}         | 1 Set  | {{crockery_value}}
+6.      | {{bedding_quilts_and_linen}}         | {{qty}}| {{bedding_value}}
+7.      | {{bridal_dresses_and_clothes}}       | {{qty}}| {{clothes_value}}
+8.      | {{miscellaneous_household_items}}   | L/Sum  | {{misc_value}}
+--------------------------------------------------------------------------------
+TOTAL EVALUATION OF DOWRY ARTICLES:                     PKR {{total_dowry_value}}
+================================================================================
+
+BRIDAL GIFTS (BARI) PROVIDED BY HUSBAND/HIS FAMILY:
+--------------------------------------------------------------------------------
+9.      | {{bari_gold_ornaments_desc}}         | {{qty}}| {{bari_gold_value}}
+10.     | {{bari_dresses_and_apparel}}         | 1 Set  | {{bari_dresses_value}}
+--------------------------------------------------------------------------------
+TOTAL EVALUATION OF BRIDAL GIFTS:                       PKR {{total_bari_value}}
+================================================================================
+GRAND TOTAL CLAIMED FOR RECOVERY:                       PKR {{grand_total_combined_value}}
+
+
+Note: The above-mentioned articles are in pristine condition and are currently in the illegal possession and custody of the Defendant at the matrimonial home. The values are assessed according to the current market utilities.
+
+
+                                                                _________________
+                                                                    PLAINTIFF
+Through:
+{{lawyer_name}}
+Advocate

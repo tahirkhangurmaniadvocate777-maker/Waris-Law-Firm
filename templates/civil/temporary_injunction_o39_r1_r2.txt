@@ -1,0 +1,3 @@
+# Application for Temporary Injunction (Order 39 Rules 1 & 2 CPC)
+# Placeholders use {snake_case} for docx-templates.
+# Generate .docx via: npm run generate:civil-docx

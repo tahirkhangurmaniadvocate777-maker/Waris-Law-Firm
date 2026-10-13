@@ -1,0 +1,46 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE, {{court_location}}
+
+Family Suit No. ___________ / 2026
+
+{{plaintiff_name}} {{plaintiff_relation}}
+Resident of: {{plaintiff_address}}
+Cell No: {{plaintiff_phone}}
+                                                        ... PLAINTIFF
+                                VERSUS
+
+{{defendant_name}} {{defendant_relation}}
+Resident of: {{defendant_address}}
+Cell No: {{defendant_phone}}
+                                                        ... DEFENDANT
+
+SUIT FOR DISSOLUTION OF MARRIAGE ON THE BASIS OF KHULA
+
+
+RESPECTFULLY SHEWETH:
+
+1. That the marriage between the Plaintiff and the Defendant was solemnized on {{marriage_date}} according to Muslim Rites and Shariah laws. A copy of the Nikahnama is attached herewith.
+2. That out of the wedlock, {{children_count}} child/children were born, namely {{children_details}}.
+3. That the behavior of the Defendant towards the Plaintiff became cruel, abusive, and non-serious soon after the marriage, to the extent that {{abuse_description}}.
+4. That the Defendant has failed to maintain the Plaintiff or provide any financial or emotional support since {{abandonment_date}}.
+5. That due to the continuous mental torture, physical abuse, and deep hatred created by the Defendant's conduct, the Plaintiff has developed a fixed aversion toward the Defendant and it is completely impossible for her to live with him within the limits prescribed by Allah Almighty.
+6. That the Plaintiff is fully ready to forgo her right to deferred dower or return prompt dower received in lieu of obtaining a decree for Khula.
+7. That the cause of action arose on {{cause_of_action_date}} when the final dispute occurred and the Defendant flatly refused to mend his ways, and within {{court_location}} where the Plaintiff currently resides.
+8. That the proper court fee has been affixed on the plaint.
+
+PRAYER:
+It is, therefore, respectfully prayed that this Honorable Court may graciously pass a decree in favor of the Plaintiff against the Defendant for:
+- A decree for the Dissolution of Marriage on the basis of Khula may graciously be passed in favor of the Plaintiff against the Defendant.
+- Any other relief which this Honorable Court deems fit and proper under the circumstances may also be awarded.
+
+
+                                                                _________________
+                                                                    PLAINTIFF
+Through:
+{{lawyer_name}}
+Advocate
+
+VERIFICATION:
+Verified on Oath at {{court_location}} on this {{current_date}}, that the contents of paragraphs 1 to 8 are true and correct to the best of my knowledge and belief, and the rest are based on information received.
+
+                                                                _________________
+                                                                    PLAINTIFF

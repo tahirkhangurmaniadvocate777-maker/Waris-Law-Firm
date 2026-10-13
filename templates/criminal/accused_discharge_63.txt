@@ -1,0 +1,28 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+State VERSUS {{accused_name}}
+FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+APPLICATION FOR DISCHARGE OF THE ACCUSED UNDER SECTION {{discharge_section}} OF THE CODE OF CRIMINAL PROCEDURE, 1898
+
+Respectfully Sheweth:
+
+1. That the above-titled case is pending before this Honorable Court.
+
+2. That the charge against the applicant / accused is groundless and there is no sufficient ground for proceeding.
+
+3. That continuation of the proceedings would amount to abuse of the process of law.
+
+4. {{extra_grounds}}
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Discharge the applicant / accused from the charge under section {{discharge_section}} Cr.P.C.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

@@ -1,0 +1,45 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE, {{court_location}}
+
+Family Suit No. ___________ / 2026
+
+{{plaintiff_name}} {{plaintiff_relation}}
+Resident of: {{plaintiff_address}}
+Cell No: {{plaintiff_phone}}
+                                                        ... PLAINTIFF
+                                VERSUS
+
+{{defendant_name}} {{defendant_relation}}
+Resident of: {{defendant_address}}
+Cell No: {{defendant_phone}}
+                                                        ... DEFENDANT
+
+SUIT FOR RESTITUTION OF CONJUGAL RIGHTS
+
+
+RESPECTFULLY SHEWETH:
+
+1. That the Plaintiff lawfully married the Defendant on {{marriage_date}} according to Muslim Rites and Shariah laws. A copy of the Nikahnama is attached herewith.
+2. That the Plaintiff has always performed his marital obligations with love and care, providing a comfortable home and financial maintenance to the Defendant.
+3. That on {{departure_date}}, under the undue influence and instigation of her parents, the Defendant left the matrimonial home without any lawful justification, carrying away personal ornaments.
+4. That the Plaintiff took a formal family elders' delegation (Panchayat) to the Defendant’s house on {{panchayat_date}} to reconcile and bring her back, but the Defendant and her family flatly refused.
+5. That the Plaintiff is still willing and ready to keep the Defendant in his house with absolute safety, respect, love, and dignity.
+6. That the cause of action arose on {{cause_of_action_date}} when the Defendant finally refused to return to the matrimonial home, within the jurisdiction of this court.
+7. That the proper court fee has been affixed on the plaint.
+
+PRAYER:
+It is, therefore, respectfully prayed that a decree for Restitution of Conjugal Rights may graciously be passed in favor of the Plaintiff:
+- Directing the Defendant to return to the matrimonial home of the Plaintiff and live with him as a lawful wife.
+- Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+
+                                                                _________________
+                                                                    PLAINTIFF
+Through:
+{{lawyer_name}}
+Advocate
+
+VERIFICATION:
+Verified on Oath at {{court_location}} on this {{current_date}}, that the contents of paragraphs 1 to 7 are true and correct to the best of my knowledge and belief, and the rest are based on information received.
+
+                                                                _________________
+                                                                    PLAINTIFF

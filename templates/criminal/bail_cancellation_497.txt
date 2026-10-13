@@ -1,0 +1,36 @@
+IN THE COURT OF THE {{court_title}}, {{district}}
+
+Bail Cancellation Application No. _____ / {{year}}
+
+{{complainant_name}} S/o {{complainant_father}}
+... APPLICANT / COMPLAINANT
+
+                                VERSUS
+
+1. The State
+2. {{accused_name}} (accused enlarged on bail)
+... RESPONDENTS
+
+APPLICATION UNDER SECTION 497 Cr.P.C. FOR CANCELLATION OF BAIL GRANTED TO THE ACCUSED
+
+Respectfully Sheweth:
+
+1. That the accused was enlarged on bail in FIR No. {{fir_number}} dated {{fir_date}} under section {{offenses}} {{offense_law}}, P.S. {{police_station}}, vide order dated {{order_date}}.
+
+2. That after grant of bail, the accused has misused the concession of bail / is tampering with evidence / is absconding from trial / is threatening the prosecution witnesses.
+
+3. That the grounds for cancellation are: {{extra_grounds}}.
+
+4. That in the interest of justice, the bail order is liable to be recalled and cancelled.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Cancel the bail granted to the accused and remand him to custody.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

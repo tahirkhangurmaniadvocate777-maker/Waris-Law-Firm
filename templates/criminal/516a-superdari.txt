@@ -1,0 +1,32 @@
+IN THE COURT OF THE HONORABLE ILLAQA MAGISTRATE, {{court_city}}
+
+In the matter of: State VS {{accused_name}}
+Case FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+{{applicant_name}} son of {{applicant_parentage}},
+Resident of {{applicant_address}}.
+... APPLICANT
+
+APPLICATION UNDER SECTION 516-A OF THE CODE OF CRIMINAL PROCEDURE, 1898 FOR THE RELEASE OF {{property_type}} ON SUPARDARI TO THE APPLICANT.
+
+Respectfully Sheweth:
+
+1. That the police of Police Station {{police_station}} took custody of the Applicant's property namely {{property_detailed_description}} (Chassis No: {{chassis_number}}, Engine No: {{engine_number}}) in the above-mentioned case.
+
+2. That the Applicant is the absolute and lawful owner of the said property and requires the same for daily livelihood.
+
+3. That if the said property remains parked in the open compound of the Police Station, it is liable to be destroyed by weather and other natural elements, causing irreparable loss to the Applicant.
+
+4. That the Applicant undertakes to produce the said property before this Honorable Court or any competent authority whenever so required.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Release the above-mentioned property on Superdari in favour of the Applicant against reliable surety bonds.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

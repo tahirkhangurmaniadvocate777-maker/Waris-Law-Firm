@@ -1,0 +1,36 @@
+IN THE HONORABLE SESSIONS COURT / HIGH COURT, {{court_city}}
+
+Criminal Revision No. _________ / {{year}}
+
+{{petitioner_name}}
+... PETITIONER
+
+                                VERSUS
+
+1. The State
+2. {{respondent_name}}
+... RESPONDENTS
+
+CRIMINAL REVISION PETITION UNDER SECTION 439 / 439-A OF THE CODE OF CRIMINAL PROCEDURE, 1898 AGAINST THE ILLEGAL ORDER DATED {{order_date}} PASSED BY THE LOWER COURT.
+
+Respectfully Sheweth:
+
+1. That the lower court on {{order_date}} arbitrarily dismissed the application for {{application_nature}}.
+
+2. That the impugned order suffers from patent illegality, procedural irregularity, and the lower court exceeded its jurisdiction.
+
+3. That the order has resulted in a severe miscarriage of justice.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Allow the instant revision petition.
+*   Summon the records of the lower court.
+*   Declare the impugned order null and void.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+PETITIONER
+Through:
+
+{{legal_counsel_footer}}

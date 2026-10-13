@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0b1c2c;
+  --color-navy-2: #16324a;
+  --color-brass: #b8955a;
+  --color-brass-soft: #d4bc8a;
+  --color-stone: #e8eef3;
+  --color-mist: #f3f6f9;
+  --color-ink: #15202b;
+  --color-line: #c9d4de;
+  --color-gold: #b8955a;
+  --font-sans: var(--font-body), "Segoe UI", sans-serif;
+  --font-serif: var(--font-display), "Palatino Linotype", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(22, 50, 74, 0.06), transparent 42%),
+    linear-gradient(180deg, #f3f6f9 0%, #e8eef3 100%);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rule-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+}
+
+.animate-rise-late {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both;
+}
+
+.animate-fade {
+  animation: fade-in 1.2s ease both;
+}
+
+.animate-rule {
+  transform-origin: left center;
+  animation: rule-draw 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.hero-atmosphere {
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(184, 149, 90, 0.22), transparent 42%),
+    radial-gradient(ellipse at 88% 70%, rgba(22, 50, 74, 0.55), transparent 48%),
+    linear-gradient(155deg, #07131f 0%, #0b1c2c 42%, #16324a 78%, #0a1722 100%);
+}
+
+.hero-columns {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 68px,
+      rgba(255, 255, 255, 0.025) 68px,
+      rgba(255, 255, 255, 0.025) 70px
+    ),
+    linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.28) 100%);
+}
+
+.petition-sheet {
+  background: white;
+  color: #111;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.45;
+  padding: 14mm 14mm 16mm;
+  box-shadow: 0 16px 40px rgba(16, 32, 51, 0.12);
+}
+
+/* Court pleading paper — amber on screen, stamp margin for filing */
+.court-pleading-sheet {
+  font-family: "Times New Roman", Times, "Palatino Linotype", serif;
+  font-size: 12pt;
+  line-height: 1.65;
+}
+
+.court-pleading-stamp-margin {
+  height: 2in;
+  min-height: 2in;
+}
+
+.petition-sheet h1,
+.petition-sheet h2,
+.petition-sheet p {
+  margin: 0;
+}
+
+.petition-court {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 13pt;
+}
+
+.petition-rule {
+  width: 42%;
+  margin: 8px auto 14px;
+  border: 0;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  height: 4px;
+}
+
+.petition-suitno {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.party {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px;
+  align-items: end;
+  margin: 8px 0 4px;
+}
+
+.party-role {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+.versus {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 12px 0;
+}
+
+.cause-title {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin: 18px 0 16px;
+  line-height: 1.35;
+}
+
+.sheweth {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pleading-para {
+  text-align: justify;
+  margin: 0 0 8px;
+}
+
+.prayer-heading {
+  font-weight: 700;
+  margin: 14px 0 6px;
+}
+
+.prayer-intro {
+  text-align: justify;
+  margin-bottom: 6px;
+}
+
+.prayer-list {
+  margin: 0 0 8px 1.2rem;
+  padding: 0;
+}
+
+.prayer-list li {
+  margin: 0 0 6px;
+  text-align: justify;
+}
+
+.sign-block {
+  margin-top: 28px;
+  margin-left: auto;
+  width: min(100%, 280px);
+  text-align: center;
+  break-inside: avoid;
+}
+
+.sign-line {
+  margin-top: 28px;
+  letter-spacing: 0.08em;
+}
+
+.sign-role {
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.through {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.verify-heading {
+  font-weight: 700;
+  margin-top: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-rise-delay,
+  .animate-rise-late,
+  .animate-fade,
+  .animate-rule {
+    animation: none;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm 14mm;
+  }
+
+  body {
+    background: white !important;
+    color: #111 !important;
+  }
+
+  .screen-grid {
+    display: block !important;
+  }
+
+  .print-stage {
+    position: static !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .petition-sheet,
+  .court-pleading-sheet {
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .court-pleading-stamp-margin {
+    height: 2in !important;
+    min-height: 2in !important;
+  }
+
+  .pleading-para,
+  .sign-block {
+    break-inside: avoid;
+  }
+}

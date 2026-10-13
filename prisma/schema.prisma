@@ -1,0 +1,62 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+/// Lead capture — professional profiles before drafting portal access.
+model Lead {
+  id         String   @id @default(uuid())
+  fullName   String
+  /// Unique index prevents duplicate profiles per advocate contact number.
+  phone      String   @unique
+  email      String
+  city       String?  @default("Dera Ghazi Khan")
+  /// e.g. "Civil Law", "Revenue Law", "Family Law"
+  matterType String?
+  createdAt  DateTime @default(now())
+
+  logs UsageLog[]
+
+  @@index([email])
+}
+
+/// Usage monitoring — historical traces of compiled petitions for admin audits.
+model UsageLog {
+  id String @id @default(uuid())
+  leadId String
+  /// e.g. "civil-suit-writer", "revenue-applications-writer", "family-suit-writer"
+  toolUsed String
+  /// Application / draft type, e.g. "declaratory", "agri-partition", "khula", "dowry"
+  draftType String
+  timestamp DateTime @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId])
+}
+
+/// Criminal Trial Referencer — searchable trial phases controlled via /admin.
+model ReferencerEntry {
+  id              String   @id @default(uuid())
+  /// e.g. "trial stage", "CrPC/PPC section", "case law", "timeline"
+  category        String
+  /// e.g. "249-A", "265-K", "497"
+  sectionNumber   String?
+  title           String
+  /// Comma-separated keyword search hooks
+  keywords        String
+  shortNote       String
+  /// Cross-reference tags
+  relatedSections String?
+  /// JSON array (or line-separated) practical court instructions
+  checklistJson   String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([category])
+  @@index([sectionNumber])
+}

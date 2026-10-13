@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Waris Law Firm — Plan &amp; Coding Documentation</title>
+<style>
+  @page { margin: 16mm 14mm; size: A4; }
+  body {
+    font-family: "Segoe UI", "Calibri", Georgia, serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
+    color: #1a2332;
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 18pt;
+    color: #0b1f3a;
+    border-bottom: 2px solid #0b1f3a;
+    padding-bottom: 6px;
+    page-break-before: always;
+    margin-top: 0;
+  }
+  h1:first-of-type { page-break-before: avoid; }
+  h2 {
+    font-size: 13pt;
+    color: #0b1f3a;
+    margin-top: 1.4em;
+    border-bottom: 1px solid #c5d0de;
+    padding-bottom: 3px;
+    page-break-after: avoid;
+  }
+  h3 { font-size: 11.5pt; color: #1e3a5f; page-break-after: avoid; }
+  p { margin: 0.45em 0; }
+  code {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 8.5pt;
+    background: #f0f3f7;
+    padding: 0 3px;
+    border-radius: 2px;
+  }
+  pre {
+    background: #f4f6f9;
+    border: 1px solid #d5dde8;
+    padding: 8px 10px;
+    font-size: 8pt;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.7em 0 1em;
+    font-size: 9pt;
+    page-break-inside: auto;
+  }
+  th, td {
+    border: 1px solid #c5d0de;
+    padding: 4px 6px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th { background: #0b1f3a; color: #fff; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+  ul { margin: 0.4em 0 0.8em 1.2em; }
+  ul.compact { columns: 2; column-gap: 18px; font-size: 8.5pt; }
+  ul.compact li { break-inside: avoid; margin: 2px 0; }
+  hr { border: none; border-top: 1px solid #c5d0de; margin: 1.2em 0; }
+  a { color: #1e4d8c; text-decoration: none; }
+  .cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 28vh;
+  }
+  .cover h1 {
+    border: none;
+    font-size: 26pt;
+    page-break-before: avoid;
+  }
+  .cover .sub { font-size: 12pt; color: #44566e; margin-top: 0.6em; }
+  .cover .meta { margin-top: 2em; font-size: 10pt; color: #334455; }
+  .footer-note { margin-top: 2em; font-style: italic; color: #556677; }
+</style>
+</head>
+<body>
+  <section class="cover">
+    <h1>Waris Law Firm</h1>
+    <p class="sub">Complete Project Plan &amp; Coding Files Documentation</p>
+    <p class="meta">
+      Advocate Muhammad Tahir Khan Gurmani<br/>
+      District Courts, Dera Ghazi Khan<br/>
+      Document date: 2026-10-11<br/>
+      Sources: WARIS-LAW-FIRM-COMPLETE-PLAN.md + application source tree
+    </p>
+  </section>
+  <section>
+    <h1 style="page-break-before:avoid">PART A — Complete Project Plan</h1>
+    <br/>
+<p><strong>Document:</strong> Single master plan (all modules) — refreshed to match <strong>current implemented reality</strong> (Oct 2026)  </p>
+<p><strong>Advocate:</strong> Muhammad Tahir Khan Gurmani, Advocate High Court  </p>
+<p><strong>Firm:</strong> Waris Law Office / Waris Law Firm  </p>
+<p><strong>Office:</strong> Office No. 40, Ground Floor, Quaid-E-Azam Block, District Courts, Dera Ghazi Khan  </p>
+<p><strong>Phones:</strong> 0334-7744739 | 0300-1652953  </p>
+<p><strong>Emails:</strong> [warislawofficedbadgk@gmail.com](mailto:warislawofficedbadgk@gmail.com) | [muhammadtahirkhangurmaniadvocatedbadgk@outlook.com](mailto:muhammadtahirkhangurmaniadvocatedbadgk@outlook.com) | [tahirkhangurmaniadvocate777@gmail.com](mailto:tahirkhangurmaniadvocate777@gmail.com)  </p>
+<p><strong>Practice areas:</strong> Criminal Law | Civil Law | Revenue Law | Family Law | FBR / Tax &amp; Corporate | Writ Petition</p>
+<br/>
+<hr/>
+<br/>
+<h2>0. Implementation status (current)</h2>
+<br/>
+<table><thead><tr><th>Area</th><th>Status</th></tr></thead><tbody>
+<tr><td>Marketing site (Home, Practice Areas, About, Contact)</td><td><strong>Live in app</strong></td></tr>
+<tr><td>Contact chambers map</td><td><strong>Implemented</strong> (Google Maps embed + open-in-Maps link)</td></tr>
+<tr><td>Tools hub + drafting portal shell</td><td><strong>Implemented</strong></td></tr>
+<tr><td>Portal law-field search</td><td><strong>Implemented</strong> (sidebar search across practice areas + tools)</td></tr>
+<tr><td>Criminal Trial Referencer</td><td><strong>Implemented</strong> (Prisma + admin CRUD)</td></tr>
+<tr><td>Criminal Applications Writer</td><td><strong>25 modules</strong> (live preview + <code>.docx</code> via API)</td></tr>
+<tr><td>Civil / Family / Revenue writers</td><td><strong>Implemented</strong></td></tr>
+<tr><td>Family templates on disk</td><td><strong>6 locked templates</strong> (+ maintenance-only UI type)</td></tr>
+<tr><td>FBR / SECP Practice Hub</td><td><strong>Implemented</strong> (checklists + links)</td></tr>
+<tr><td>Lead capture + usage logs</td><td><strong>Implemented</strong></td></tr>
+<tr><td>Admin (<code>/admin</code>)</td><td><strong>Implemented</strong> (session cookie)</td></tr>
+<tr><td>Writer API</td><td><strong><code>POST /api/v1/writer/generate</code></strong> (docx / json)</td></tr>
+</tbody></table>
+<br/>
+<p>This document is the saved complete plan for the firm website and drafting tools. It reflects what is built in the codebase, not only the original v1 sketch.</p>
+<br/>
+<hr/>
+<br/>
+<h2>1. Goal</h2>
+<br/>
+<p>Public website for the firm plus freely usable drafting tools for <strong>criminal, civil, family, and revenue</strong> matters, plus an <strong>FBR / SECP practice guide hub</strong>.</p>
+<br/>
+<ul>
+<li>Anyone who visits or uses a tool: name, phone, email saved in <strong>Administration</strong>.</li>
+<li>Drafts: live HTML petition preview + <strong>browser Print / Save as PDF</strong>; criminal modules also download court-style <strong><code>.docx</code></strong>.</li>
+<li>Tax/corporate modules = checklists + official portal links only (no IRIS/eZfile login from this site).</li>
+<li>Disclaimer on all tools: assistance only; filing remains advocate/user responsibility.</li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>2. Tech stack</h2>
+<br/>
+<table><thead><tr><th>Layer</th><th>Choice</th></tr></thead><tbody>
+<tr><td>Frontend</td><td>Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS 4</td></tr>
+<tr><td>Database</td><td>SQLite via Prisma (leads, usage logs, referencer content)</td></tr>
+<tr><td>Admin</td><td>Password-protected <code>/admin</code> (HMAC session cookie <code>waris_admin_session</code>)</td></tr>
+<tr><td>Criminal output</td><td>HTML preview + <code>docx</code> package → <code>.docx</code> download</td></tr>
+<tr><td>Print</td><td>HTML petition preview + browser Print / Save as PDF</td></tr>
+<tr><td>Docx seed script</td><td><code>npm run generate:criminal-docx</code> → <code>scripts/generate-criminal-docx.mjs</code></td></tr>
+</tbody></table>
+<br/>
+<h3>Admin password note</h3>
+<br/>
+<ul>
+<li>Env var: <code>ADMIN_PASSWORD</code></li>
+<li><strong>Default fallback if unset:</strong> <code>waris-admin-2026</code> (see <code>lib/auth.ts</code>)</li>
+<li>Change via <code>.env</code> for production; do not commit real secrets.</li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>3. Site map &amp; routes</h2>
+<br/>
+<pre><code>Home → Practice Areas | About | Contact | Tools Hub
+Tools Hub → Drafting Portal (sidebar) →
+  Criminal Trial Referencer
+  Criminal Applications Writer (?type=…) → Preview + Generate .docx
+  Civil Suit Writer → Printable draft
+  Family Suit Writer (?type=…) → Printable draft (+ Annexure-B for dowry)
+  Revenue Applications Writer → Printable draft
+  FBR / SECP Practice Hub → Checklists + links
+Public use → Lead capture → Admin database
+</code></pre>
+<br/>
+<table><thead><tr><th>Route</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>/</code></td><td>Brand-forward hero; CTAs Contact + Tools</td></tr>
+<tr><td><code>/practice-areas</code></td><td>Criminal, Civil, Family, Revenue, FBR/Corporate, Writ</td></tr>
+<tr><td><code>/about</code></td><td>Advocate profile (DG Khan / High Court)</td></tr>
+<tr><td><code>/contact</code></td><td>Address, phones, emails, inquiry form, chambers map</td></tr>
+<tr><td><code>/tools</code></td><td>Hub for all tools</td></tr>
+<tr><td><code>/tools/criminal-trial-referencer</code></td><td>Searchable trial stages / sections / notes</td></tr>
+<tr><td><code>/tools/criminal-applications-writer</code></td><td>Criminal applications (25 types via <code>?type=</code>)</td></tr>
+<tr><td><code>/tools/civil-suit-writer</code></td><td>Civil plaints (Order VII) → print</td></tr>
+<tr><td><code>/tools/family-suit-writer</code></td><td>Family Court suits → print</td></tr>
+<tr><td><code>/tools/revenue-applications-writer</code></td><td>LRA applications + agri partition → print</td></tr>
+<tr><td><code>/tools/fbr-secp-practice</code></td><td>IRIS / eZfile checklists + official links</td></tr>
+<tr><td><code>/admin</code></td><td>Leads, usage logs, referencer CRUD</td></tr>
+</tbody></table>
+<br/>
+<h3>API routes</h3>
+<br/>
+<table><thead><tr><th>Route</th><th>Method</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>/api/leads</code></td><td>POST</td><td>Lead capture</td></tr>
+<tr><td><code>/api/usage</code></td><td>POST</td><td>Usage logging</td></tr>
+<tr><td><code>/api/admin/login</code></td><td>POST</td><td>Admin password login</td></tr>
+<tr><td><code>/api/admin/logout</code></td><td>POST</td><td>Clear admin session</td></tr>
+<tr><td><code>/api/admin/referencer</code></td><td>*</td><td>Referencer content CRUD</td></tr>
+<tr><td><code>/api/v1/writer/generate</code></td><td>POST</td><td>Criminal draft → <code>.docx</code> or JSON</td></tr>
+</tbody></table>
+<br/>
+<p><strong>Generate body (criminal):</strong> <code>{ type: CriminalAppType, fields: {...}, format?: &quot;docx&quot; | &quot;json&quot; }</code>  </p>
+<p>Returns attachment <code>.docx</code> (default) or JSON draft when <code>format: &quot;json&quot;</code>. Logs usage as <code>criminal-applications-writer</code> / <code>{type}:{format}</code>.</p>
+<br/>
+<hr/>
+<br/>
+<h2>4. Drafting portal (UI)</h2>
+<br/>
+<p>Implemented as <code>DraftingPortalShell</code> around tools pages:</p>
+<br/>
+<ul>
+<li><strong>Portal search:</strong> sidebar search bar (<code>PortalSearch</code> + <code>portalSearchCatalog</code>) across practice areas, criminal/family/civil/revenue modules, and FBR/SECP guides</li>
+<li><strong>Criminal primary nav:</strong> FIR Direction (22-A/B), Bail (497/498), Superdari (516-A), Attendance exemption</li>
+<li><strong>Criminal more:</strong> full remaining module list (491-552, NBW, appeals, ID parade, habeas, etc.)</li>
+<li><strong>Family primary:</strong> Khula, Dower &amp; maintenance, Dowry + Annexure-B, Custody, Restitution, Maintenance only</li>
+<li><strong>Other tools:</strong> Referencer, Civil, Revenue, FBR/SECP</li>
+<li>Deep links use query <code>?type=</code> on criminal and family writers</li>
+<li>Module-specific forms via <code>criminalModuleMeta</code> + <code>CriminalModuleForm</code> / <code>PortalFormShell</code></li>
+<li>Lead gate before first tool use (<code>LeadGate</code>)</li>
+<li><strong>Contact map:</strong> <code>OfficeMap</code> embeds Quaid-E-Azam Block / District Courts pin (<code>firm.officeLocation</code>)</li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>5. Lead / Administration</h2>
+<br/>
+<p><strong>Capture fields:</strong> Full name, phone, email (+ optional city / matter type)  </p>
+<p><strong>When:</strong> Contact form + before first tool use  </p>
+<p><strong>Log:</strong> Timestamp, tool used, draft/application type  </p>
+<p><strong>Access:</strong> <code>/admin</code> only (password session; see §2)</p>
+<br/>
+<hr/>
+<br/>
+<h2>6. Tool 1 — Criminal Trial Referencer</h2>
+<br/>
+<p>Searchable index with filters:</p>
+<br/>
+<ul>
+<li>Categories: trial stage, CrPC/PPC section, case law, checklist, timeline, citation</li>
+<li>Search: title, section number, keywords, notes</li>
+<li>Detail: short note, related sections, practical checklist</li>
+<li>Seed: investigation → challan → charge → evidence → 249-A / 265-K / judgment</li>
+<li>Admin can add / edit / delete entries (<code>/api/admin/referencer</code>)</li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>7. Tool 2 — Criminal Applications Writer (25 modules)</h2>
+<br/>
+<p><strong>Flow:</strong> Select type (<code>?type=</code> or dropdown) → lead fields (if needed) → module form → live preview → <strong>Generate .docx</strong> (<code>POST /api/v1/writer/generate</code>) and/or Print / PDF → usage log</p>
+<br/>
+<p><strong>Offense law dropdown (where relevant):</strong> PPC | EMO | AMLA | CNSA | Other</p>
+<br/>
+<p><strong>Default grounds for 249-A / 265-K:</strong></p>
+<br/>
+<p>1. Groundless charge at any stage of trial  </p>
+<p>2. Lack of incriminating material on record  </p>
+<p>3. Zero probability of ultimate conviction  </p>
+<br/>
+<h3>7.1 Full module list (<code>criminalAppOptions</code>)</h3>
+<br/>
+<table><thead><tr><th>#</th><th>ID</th><th>Label</th></tr></thead><tbody>
+<tr><td>1</td><td><code>497</code></td><td>Bail application u/s 497 Cr.P.C. (post-arrest)</td></tr>
+<tr><td>2</td><td><code>498</code></td><td>Application u/s 498 Cr.P.C.</td></tr>
+<tr><td>3</td><td><code>249A</code></td><td>Application u/s 249-A Cr.P.C.</td></tr>
+<tr><td>4</td><td><code>265K</code></td><td>Application u/s 265-K Cr.P.C.</td></tr>
+<tr><td>5</td><td><code>court-witness</code></td><td>Summoning of witness as Court Witness</td></tr>
+<tr><td>6</td><td><code>491-552</code></td><td>Application u/s 491 r/w 552 Cr.P.C. (recovery of minor detenue)</td></tr>
+<tr><td>7</td><td><code>22A-22B</code></td><td>Application u/s 22-A &amp; 22-B Cr.P.C. (direction to register FIR)</td></tr>
+<tr><td>8</td><td><code>516A</code></td><td>Application u/s 516-A Cr.P.C. (release on Superdari)</td></tr>
+<tr><td>9</td><td><code>NBW</code></td><td>Application for Non-Bailable Arrest Warrants (absconding accused)</td></tr>
+<tr><td>10</td><td><code>DISPENSE</code></td><td>Application to dispense with personal attendance of accused</td></tr>
+<tr><td>11</td><td><code>216</code></td><td>Application u/s 216 Cr.P.C. (alteration of charges)</td></tr>
+<tr><td>12</td><td><code>NONHARASS</code></td><td>Application for direction not to harass / deter petitioner (Saiel)</td></tr>
+<tr><td>13</td><td><code>APPEAL</code></td><td>Criminal Appeal against conviction</td></tr>
+<tr><td>14</td><td><code>REVISION</code></td><td>Criminal Revision u/s 439 / 439-A Cr.P.C.</td></tr>
+<tr><td>15</td><td><code>200</code></td><td>Private Complaint u/s 200 Cr.P.C.</td></tr>
+<tr><td>16</td><td><code>SUMMON200</code></td><td>Application to summon accused (private complaint u/s 200)</td></tr>
+<tr><td>17</td><td><code>WITNESS-SUMMONS</code></td><td>Application for summoning witnesses to record evidence</td></tr>
+<tr><td>18</td><td><code>MEDICAL-BOARD</code></td><td>Application for constitution of Medical Board (re-examination)</td></tr>
+<tr><td>19</td><td><code>EXEMPT-ADJOURN</code></td><td>Application for exemption from appearance and adjournment</td></tr>
+<tr><td>20</td><td><code>ID-PARADE</code></td><td>Application for identification parade</td></tr>
+<tr><td>21</td><td><code>DISCHARGE-63</code></td><td>Application for discharge of accused (s.63 / editable)</td></tr>
+<tr><td>22</td><td><code>HABEAS-491</code></td><td>Habeas corpus / production of person u/s 491 Cr.P.C.</td></tr>
+<tr><td>23</td><td><code>WITNESS-RECALL-540</code></td><td>Application for recall of witness u/s 540 Cr.P.C.</td></tr>
+<tr><td>24</td><td><code>E-EVIDENCE-164</code></td><td>Application for recording / production of electronic evidence</td></tr>
+<tr><td>25</td><td><code>BAIL-CANCEL-497</code></td><td>Application for cancellation of bail u/s 497 Cr.P.C.</td></tr>
+</tbody></table>
+<br/>
+<h3>7.2 Six newer modules (ID-PARADE set)</h3>
+<br/>
+<p>Added after the core 13+ set:</p>
+<br/>
+<p>1. <strong>ID-PARADE</strong> — identification parade  </p>
+<p>2. <strong>DISCHARGE-63</strong> — discharge (editable section, default 63)  </p>
+<p>3. <strong>HABEAS-491</strong> — habeas / production u/s 491  </p>
+<p>4. <strong>WITNESS-RECALL-540</strong> — recall of witness u/s 540  </p>
+<p>5. <strong>E-EVIDENCE-164</strong> — electronic evidence recording / production  </p>
+<p>6. <strong>BAIL-CANCEL-497</strong> — cancellation of bail u/s 497  </p>
+<br/>
+<h3>7.3 Notable earlier expansions (beyond original 5)</h3>
+<br/>
+<ul>
+<li><strong>22A-22B</strong> — FIR registration direction (Justice of Peace)  </li>
+<li><strong>491-552</strong> — minor recovery (+ affidavit)  </li>
+<li><strong>516A</strong> — Superdari / property release  </li>
+<li><strong>NBW</strong> — non-bailable warrants for absconding accused  </li>
+<li>Plus: DISPENSE, 216, NONHARASS, APPEAL, REVISION, 200, SUMMON200, WITNESS-SUMMONS, MEDICAL-BOARD, EXEMPT-ADJOURN  </li>
+</ul>
+<br/>
+<h3>7.4 Template / docx inventory (criminal)</h3>
+<br/>
+<p>Plain-text templates under <code>templates/criminal/</code> and Word sources under <code>templates/criminal/docx/</code> (and some dual-named <code>.docx</code> in the parent folder). Generation uses <code>lib/criminal-docx.ts</code> + live <code>buildCriminalDraft</code> in <code>lib/criminal.ts</code>.</p>
+<br/>
+<p>Examples on disk:</p>
+<br/>
+<pre><code>templates/criminal/
+  22a-22b-fir-direction.txt
+  491-552-minor-recovery.txt
+  516a-superdari.txt
+  nbw-absconding-arrest.txt
+  identification_parade.txt (+ .docx)
+  accused_discharge_63.txt (+ .docx)
+  habeas_corpus_491.txt (+ .docx)
+  witness_recall_540 / electronic_evidence_164 / bail_cancellation_497 …
+  docx/   ← paired .docx for each module (497, 498, 249a, 265k, 22a-22b, …)
+</code></pre>
+<br/>
+<hr/>
+<br/>
+<h2>8. Tool 3 — Civil Suit Writer (CPC 1908)</h2>
+<br/>
+<p><strong>Structural flow:</strong>  </p>
+<p>Plaint (Orders VI &amp; VII) → Written Statement (Order VIII) → Issues &amp; Trial (Order XIV)</p>
+<br/>
+<p><strong>Every plaint includes (Order VII Rule 1):</strong></p>
+<br/>
+<p>1. Heading &amp; forum (Civil Judge Class I/II/III; Sec. 15–20 CPC)  </p>
+<p>2. Title of parties  </p>
+<p>3. Nature of suit  </p>
+<p>4. Statement of facts (numbered paragraphs)  </p>
+<p>5. Cause of action  </p>
+<p>6. Jurisdiction clause  </p>
+<p>7. Valuation &amp; court-fee clause  </p>
+<p>8. Prayer  </p>
+<p>9. Verification + List of Documents + Address Form placeholders  </p>
+<br/>
+<p><strong>Kinds of suits (dropdown):</strong></p>
+<br/>
+<p>1. Declaratory suit — Sec. 42 Specific Relief Act 1877  </p>
+<p>2. Permanent / mandatory injunction — Sec. 53–55 SRA  </p>
+<p>3. Specific performance of contract — Sec. 12 SRA  </p>
+<p>4. Possession &amp; mesne profits — Sec. 8/9 SRA  </p>
+<p>5. Cancellation of documents — Sec. 39 SRA  </p>
+<p>6. Suit for damages / torts  </p>
+<p>7. Urban / built-up partition — Partition Act 1893  </p>
+<p>8. Other / custom title  </p>
+<br/>
+<p>*(Agricultural partition = Revenue Tool)*</p>
+<br/>
+<hr/>
+<br/>
+<h2>9. Tool 4 — Family Suit Writer</h2>
+<br/>
+<p><strong>Law:</strong> Family Courts Act 1964 / Rules 1965  </p>
+<p><strong>Extras:</strong> Schedule of Witnesses &amp; Documents; interim maintenance/custody option; reconciliation notes (Sec. 10 &amp; 12)  </p>
+<p><strong>Portal types:</strong> khula | dower-maintenance | dowry | custody | restitution | <strong>maintenance-only</strong></p>
+<br/>
+<h3>Dropdown + template files</h3>
+<br/>
+<table><thead><tr><th>#</th><th>Suit</th><th>Status</th><th>File</th></tr></thead><tbody>
+<tr><td>1</td><td>Dissolution / Khula</td><td>LOCKED</td><td><code>templates/family/khula-dissolution.txt</code></td></tr>
+<tr><td>2</td><td>Dower (Mahr) &amp; past/future maintenance</td><td>LOCKED</td><td><code>templates/family/dower-maintenance-recovery.txt</code></td></tr>
+<tr><td>3</td><td>Dowry articles (Jahiz) &amp; bridal gifts</td><td>LOCKED</td><td><code>templates/family/dowry-articles-recovery.txt</code></td></tr>
+<tr><td>3b</td><td>Annexure-B itemized list</td><td>LOCKED</td><td><code>templates/family/dowry-annexure-b.txt</code></td></tr>
+<tr><td>4</td><td>Custody u/s 25 Guardians &amp; Wards Act</td><td>LOCKED</td><td><code>templates/family/custody-guardians-wards-s25.txt</code></td></tr>
+<tr><td>5</td><td>Restitution of conjugal rights</td><td>LOCKED</td><td><code>templates/family/restitution-conjugal-rights.txt</code></td></tr>
+<tr><td>6</td><td>Maintenance only (UI writer)</td><td>Implemented</td><td><code>lib/maintenance.ts</code> (+ Family/Maintenance writers)</td></tr>
+</tbody></table>
+<br/>
+<h3>Shared form fields (most family templates)</h3>
+<br/>
+<p><code>court_location</code>, <code>plaintiff_name</code>, <code>plaintiff_relation</code>, <code>plaintiff_address</code>, <code>plaintiff_phone</code>,  </p>
+<p><code>defendant_name</code>, <code>defendant_relation</code>, <code>defendant_address</code>, <code>defendant_phone</code>,  </p>
+<p><code>lawyer_name</code> (default: Muhammad Tahir Khan Gurmani), <code>current_date</code></p>
+<br/>
+<h3>9.1 Khula — extra fields</h3>
+<br/>
+<p><code>marriage_date</code>, <code>children_count</code>, <code>children_details</code>, <code>abuse_description</code>,  </p>
+<p><code>abandonment_date</code>, <code>cause_of_action_date</code>  </p>
+<p><strong>Prayer:</strong> Decree for dissolution on basis of Khula</p>
+<br/>
+<h3>9.2 Dower &amp; Maintenance — extra fields</h3>
+<br/>
+<p><code>total_dower_amount</code>, <code>dower_type_e_g_prompt_or_deferred</code>,  </p>
+<p><code>dower_paid_status_e_g_nothing_has_been_paid_or_gold_is_pending</code>,  </p>
+<p><code>abandonment_date</code>, <code>maintenance_stopped_date</code>,  </p>
+<p><code>defendant_occupation</code>, <code>defendant_income</code>,  </p>
+<p><code>school_name</code>, <code>school_expense</code>,  </p>
+<p><code>past_maintenance_start_date</code>, <code>past_maintenance_end_date</code>, <code>requested_past_rate</code>,  </p>
+<p><code>requested_future_rate</code>,  </p>
+<p><code>dower_description_e_g_5_tolas_gold_or_cash_amount</code>,  </p>
+<p><code>total_past_amount</code>, <code>wife_future_rate</code>, <code>child_future_rate</code>  </p>
+<p><strong>Prayer:</strong> Outstanding Mahr + past maintenance + future maintenance (10% annual increase)</p>
+<br/>
+<h3>9.3 Dowry Articles — extra fields</h3>
+<br/>
+<p><code>bari_gold_weight</code>, <code>abandonment_date</code>, <code>total_dowry_value</code>, <code>cause_of_action_date</code>  </p>
+<p><strong>Print:</strong> Main plaint + Annexure-B together</p>
+<br/>
+<h3>9.4 Annexure-B rows</h3>
+<br/>
+<table><thead><tr><th>Row</th><th>Description</th><th>Value</th></tr></thead><tbody>
+<tr><td>1 Furniture</td><td><code>furniture_set_description</code></td><td><code>furniture_value</code></td></tr>
+<tr><td>2 Electronics</td><td><code>fridge_or_electronics_desc</code></td><td><code>electronics_value</code></td></tr>
+<tr><td>3 Washing machine</td><td><code>washing_machine_desc</code></td><td><code>washing_machine_value</code></td></tr>
+<tr><td>4 Gold</td><td><code>gold_ornaments_weight_carat</code> + <code>qty</code></td><td><code>gold_market_value</code></td></tr>
+<tr><td>5 Crockery</td><td><code>crockery_and_kitchenware</code></td><td><code>crockery_value</code></td></tr>
+<tr><td>6 Bedding</td><td><code>bedding_quilts_and_linen</code> + <code>qty</code></td><td><code>bedding_value</code></td></tr>
+<tr><td>7 Clothes</td><td><code>bridal_dresses_and_clothes</code> + <code>qty</code></td><td><code>clothes_value</code></td></tr>
+<tr><td>8 Misc</td><td><code>miscellaneous_household_items</code></td><td><code>misc_value</code></td></tr>
+<tr><td>Subtotal Jahez</td><td>—</td><td><code>total_dowry_value</code></td></tr>
+<tr><td>9 Bari gold</td><td><code>bari_gold_ornaments_desc</code> + <code>qty</code></td><td><code>bari_gold_value</code></td></tr>
+<tr><td>10 Bari dresses</td><td><code>bari_dresses_and_apparel</code></td><td><code>bari_dresses_value</code></td></tr>
+<tr><td>Subtotal Bari</td><td>—</td><td><code>total_bari_value</code></td></tr>
+<tr><td>Grand total</td><td>—</td><td><code>grand_total_combined_value</code></td></tr>
+</tbody></table>
+<br/>
+<h3>9.5 Custody Sec. 25 — extra fields</h3>
+<br/>
+<p><code>children_details</code>, <code>custody_loss_date</code>, <code>cause_of_action_date</code>  </p>
+<p><strong>Caption:</strong> Petitioner vs Respondent  </p>
+<p><strong>Prayer:</strong> Permanent physical custody (Hizanat)</p>
+<br/>
+<h3>9.6 Restitution — extra fields</h3>
+<br/>
+<p><code>marriage_date</code>, <code>departure_date</code>, <code>panchayat_date</code>, <code>cause_of_action_date</code>  </p>
+<p><strong>Prayer:</strong> Return to matrimonial home as lawful wife</p>
+<br/>
+<hr/>
+<br/>
+<h2>10. Tool 5 — Revenue Applications Writer</h2>
+<br/>
+<p><strong>Law:</strong> West Pakistan Land Revenue Act 1967  </p>
+<p><strong>Attachments checklist:</strong> Fard Malkiyat / Jamabandi | Khasra Girdawari | Aksi Shajra  </p>
+<br/>
+<p><strong>Process note:</strong> Application → Collector report → field verification (Patwari/Kanungo) → spot inspection → orders → appeal/revision (Sec. 161–164)</p>
+<br/>
+<p><strong>Dropdown:</strong></p>
+<br/>
+<p>1. Correction of revenue record — Sec. 45 / 53  </p>
+<p>2. Demarcation (Hadd Bandi) — Sec. 117  </p>
+<p>3. Ejectment / possession — Sec. 85 / 122  </p>
+<p>4. Mutation disputes (Intiqal) — Sec. 42  </p>
+<p>5. Partition of agricultural land — Sec. 135  </p>
+<p>   - Naksha Alif → Naksha Be (Tareeqa-e-Takseem) → Naksha Jeem (Sanad-e-Takseem)  </p>
+<p>   - Instrument of Partition Sec. 145  </p>
+<p>   - If title dispute (Sec. 141): stay; refer to Civil Court  </p>
+<br/>
+<hr/>
+<br/>
+<h2>11. Tool 6 — FBR / SECP Practice Hub</h2>
+<br/>
+<p>Guides only — <strong>no</strong> portal passwords or filing from this site.</p>
+<br/>
+<p><strong>A. FBR IRIS 2.0</strong> (<code>iris.fbr.gov.pk</code>)  </p>
+<p>Maloomat / SSO | ITR Sec. 114 | Wealth Sec. 116 | Sales Tax / IMS | PSID / ATL | Exemption Sec. 153/159</p>
+<br/>
+<p><strong>B. SECP eZfile</strong> (<code>eservices.secp.gov.pk</code>)  </p>
+<p>User registration | Name reservation | MoA/AoA | Forms 1, 21, 29 | NTN/EOBI/PESSI note</p>
+<br/>
+<p><strong>C. Partnership firm</strong>  </p>
+<p>Deed → Form A/B → Form C → FBR AOP via IRIS</p>
+<br/>
+<p><strong>D. Research links</strong></p>
+<br/>
+<table><thead><tr><th>Scope</th><th>Portal</th></tr></thead><tbody>
+<tr><td>Income Tax / SROs</td><td>fbr.gov.pk</td></tr>
+<tr><td>Sales Tax / STGOs</td><td>fbr.gov.pk</td></tr>
+<tr><td>IRIS manuals / SOPs</td><td>e.fbr.gov.pk</td></tr>
+<tr><td>Companies Act / Regulations</td><td>secp.gov.pk</td></tr>
+<tr><td>Official Gazette</td><td>pcp.gov.pk</td></tr>
+</tbody></table>
+<br/>
+<hr/>
+<br/>
+<h2>12. Design direction</h2>
+<br/>
+<ul>
+<li>Professional Pakistan district-court firm look  </li>
+<li>Deep navy + warm paper-tone petition areas  </li>
+<li>Serif court headings  </li>
+<li>Brand-first hero (firm / advocate name dominant)  </li>
+<li>Tools hub + <strong>drafting portal</strong> grouped: Criminal | Family | Civil–Revenue | Tax–Corporate  </li>
+<li>First viewport: brand, one headline, one supporting line, CTA group, one dominant visual — not a dashboard of cards  </li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>13. Implementation phases (historical → done)</h2>
+<br/>
+<p>1. Scaffold + firm contact config — <strong>done</strong>  </p>
+<p>2. Marketing pages + lead capture — <strong>done</strong>  </p>
+<p>3. Admin (login, leads, usage, CRUD) — <strong>done</strong>  </p>
+<p>4. Criminal Trial Referencer + Criminal Applications Writer (expanded to 25) — <strong>done</strong>  </p>
+<p>5. Civil Suit Writer — <strong>done</strong>  </p>
+<p>6. Family Suit Writer (5 + Annexure-B + maintenance-only) — <strong>done</strong>  </p>
+<p>7. Revenue Applications Writer — <strong>done</strong>  </p>
+<p>8. FBR / SECP Practice Hub — <strong>done</strong>  </p>
+<p>9. Polish (portal shell, module forms, <code>.docx</code> API, WhatsApp links) — <strong>in place / ongoing</strong>  </p>
+<br/>
+<hr/>
+<br/>
+<h2>14. Out of scope (still)</h2>
+<br/>
+<ul>
+<li>Login or filing on IRIS / eZfile from this website  </li>
+<li>Online payments  </li>
+<li>Client case file management  </li>
+<li>Full Urdu RTL petitions  </li>
+<li>AI free-form drafting  </li>
+<li>Multi-advocate accounts  </li>
+<li>Auto court-fee / stamp-duty calculation  </li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<h2>15. Template inventory (on disk)</h2>
+<br/>
+<pre><code>templates/family/
+  khula-dissolution.txt
+  dower-maintenance-recovery.txt
+  dowry-articles-recovery.txt
+  dowry-annexure-b.txt
+  custody-guardians-wards-s25.txt
+  restitution-conjugal-rights.txt
+
+templates/criminal/
+  *.txt  (module text templates)
+  *.docx (some dual copies)
+  docx/  (paired Word files per module)
+</code></pre>
+<br/>
+<p>Key libs: <code>lib/criminal.ts</code>, <code>lib/criminalModuleFields.ts</code>, <code>lib/criminal-docx.ts</code>, <code>lib/family.ts</code>, <code>lib/maintenance.ts</code>, <code>lib/civil.ts</code>, <code>lib/revenue.ts</code>, <code>lib/writerClient.ts</code>, <code>lib/writerFormMap.ts</code>, <code>lib/auth.ts</code>, <code>lib/firm.ts</code></p>
+<br/>
+<hr/>
+<br/>
+<h2>16. Saved deliverable</h2>
+<br/>
+<ul>
+<li>Markdown master: <code>WARIS-LAW-FIRM-COMPLETE-PLAN.md</code>  </li>
+<li>PDF export: <code>Waris-Law-Firm-Website-Plan.pdf</code> (project root)  </li>
+</ul>
+<br/>
+<hr/>
+<br/>
+<p>*End of Waris Law Firm Complete Project Plan (refreshed to implemented reality)*</p>
+<br/>
+
+  </section>
+  <section>
+    
+  <h1>PART B — Coding Files Reference</h1>
+  <p>Inventory of application source files (excluding <code>node_modules</code> and <code>.next</code>) and on-disk pleading templates. Generated 2026-10-11.</p>
+  <p><strong>Counts:</strong> 111 source files · 77 template files</p>
+  <h2>Architecture map (code → feature)</h2>
+  <table>
+    <thead><tr><th>Feature</th><th>Primary pages</th><th>Primary UI</th><th>Primary libs</th></tr></thead>
+    <tbody>
+      <tr><td>Marketing site</td><td><code>app/page.tsx</code>, about, contact, practice-areas</td><td>SiteHeader/Footer/Chrome, ContactForm, OfficeMap</td><td><code>lib/firm.ts</code>, <code>lib/config/websiteContent.ts</code>, <code>lib/practice.ts</code></td></tr>
+      <tr><td>Tools hub / portal</td><td><code>app/tools/*</code></td><td>DraftingPortalShell, PortalSearch, LeadGate</td><td><code>lib/portalSearchCatalog.ts</code></td></tr>
+      <tr><td>Criminal referencer</td><td><code>app/tools/criminal-trial-referencer</code></td><td>CriminalReferencer</td><td>Prisma + admin referencer API</td></tr>
+      <tr><td>Criminal writer (25)</td><td><code>app/tools/criminal-applications-writer</code></td><td>CriminalApplicationsWriter, CriminalModuleForm</td><td><code>lib/criminal.ts</code>, <code>criminal-docx.ts</code>, writer API</td></tr>
+      <tr><td>Civil writer</td><td><code>app/tools/civil-suit-writer</code></td><td>CivilSuitWriter, TemporaryInjunctionForm</td><td><code>lib/civil.ts</code>, <code>civil-docx.ts</code></td></tr>
+      <tr><td>Family writer</td><td><code>app/tools/family-suit-writer</code></td><td>FamilySuitWriter, FamilyDynamicForm, Annexure-B</td><td><code>lib/family.ts</code>, <code>maintenance.ts</code></td></tr>
+      <tr><td>Revenue writer</td><td><code>app/tools/revenue-applications-writer</code></td><td>RevenueApplicationsWriter, Partition forms</td><td><code>lib/revenue.ts</code>, <code>revenuePartition.ts</code></td></tr>
+      <tr><td>FBR / SECP hub</td><td><code>app/tools/fbr-secp-*</code></td><td>FbrSecpHub</td><td><code>lib/config/taxGuides.ts</code></td></tr>
+      <tr><td>Admin</td><td><code>app/admin/*</code></td><td>AdminDashboard, AdminLoginForm</td><td><code>lib/auth.ts</code>, <code>lib/db.ts</code></td></tr>
+      <tr><td>Leads & usage</td><td>API routes under <code>app/api/leads</code>, <code>usage</code></td><td>LeadGate / LeadProvider</td><td><code>lib/leadStorage.ts</code>, log helpers</td></tr>
+    </tbody>
+  </table>
+  <h2>App routes &amp; pages (`app/`)</h2>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>app/about/page.tsx</code></td><td>Advocate / firm about page</td></tr>
+<tr><td><code>app/actions/admin.ts</code></td><td>Shared admin actions</td></tr>
+<tr><td><code>app/admin/actions.ts</code></td><td>Admin server actions</td></tr>
+<tr><td><code>app/admin/login/page.tsx</code></td><td>Admin login page</td></tr>
+<tr><td><code>app/admin/page.tsx</code></td><td>Admin dashboard (leads, usage, referencer)</td></tr>
+<tr><td><code>app/api/admin/login/route.ts</code></td><td>Admin password login</td></tr>
+<tr><td><code>app/api/admin/logout/route.ts</code></td><td>Admin session logout</td></tr>
+<tr><td><code>app/api/admin/referencer/route.ts</code></td><td>Referencer CRUD (admin)</td></tr>
+<tr><td><code>app/api/case-prep/analyze/route.ts</code></td><td>Case-prep analysis API</td></tr>
+<tr><td><code>app/api/leads/capture/route.ts</code></td><td>Alternate lead capture endpoint</td></tr>
+<tr><td><code>app/api/leads/route.ts</code></td><td>POST lead capture API</td></tr>
+<tr><td><code>app/api/referencer/route.ts</code></td><td>Public referencer search/read API</td></tr>
+<tr><td><code>app/api/usage/route.ts</code></td><td>POST tool usage logging</td></tr>
+<tr><td><code>app/api/v1/automate/civil/route.ts</code></td><td>Civil automation API</td></tr>
+<tr><td><code>app/api/v1/automate/extended-criminal/route.ts</code></td><td>Extended criminal automation API</td></tr>
+<tr><td><code>app/api/v1/vault/upload-evidence/route.ts</code></td><td>Evidence upload vault API</td></tr>
+<tr><td><code>app/api/v1/writer/generate/route.ts</code></td><td>Criminal draft → .docx / JSON</td></tr>
+<tr><td><code>app/contact/page.tsx</code></td><td>Contact page + inquiry form + map</td></tr>
+<tr><td><code>app/layout.tsx</code></td><td>Root layout, fonts, global chrome</td></tr>
+<tr><td><code>app/page.tsx</code></td><td>Home / brand hero</td></tr>
+<tr><td><code>app/practice-areas/[slug]/page.tsx</code></td><td>Practice area detail by slug</td></tr>
+<tr><td><code>app/practice-areas/page.tsx</code></td><td>Practice areas index</td></tr>
+<tr><td><code>app/tools/case-prep/page.tsx</code></td><td>Case preparation console page</td></tr>
+<tr><td><code>app/tools/civil-suit-writer/page.tsx</code></td><td>Civil Suit Writer tool page</td></tr>
+<tr><td><code>app/tools/criminal-applications-writer/page.tsx</code></td><td>Criminal Applications Writer tool page</td></tr>
+<tr><td><code>app/tools/criminal-trial-referencer/page.tsx</code></td><td>Criminal Trial Referencer tool page</td></tr>
+<tr><td><code>app/tools/family-suit-writer/page.tsx</code></td><td>Family Suit Writer tool page</td></tr>
+<tr><td><code>app/tools/fbr-secp-hub/page.tsx</code></td><td>FBR / SECP hub alias page</td></tr>
+<tr><td><code>app/tools/fbr-secp-practice/page.tsx</code></td><td>FBR / SECP practice hub page</td></tr>
+<tr><td><code>app/tools/layout.tsx</code></td><td>Tools layout (portal shell)</td></tr>
+<tr><td><code>app/tools/page.tsx</code></td><td>Tools hub</td></tr>
+<tr><td><code>app/tools/revenue-applications-writer/page.tsx</code></td><td>Revenue Applications Writer tool page</td></tr>
+</tbody></table>
+<h2>React components (`components/`)</h2>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>components/AdminDashboardClient.tsx</code></td><td>Admin dashboard client wrapper</td></tr>
+<tr><td><code>components/AnnexureBPreview.tsx</code></td><td>Application source</td></tr>
+<tr><td><code>components/CasePreparationConsole.tsx</code></td><td>Case prep console UI</td></tr>
+<tr><td><code>components/CivilSuitWriter.tsx</code></td><td>Civil plaint writer UI</td></tr>
+<tr><td><code>components/ContactForm.tsx</code></td><td>Public contact inquiry form</td></tr>
+<tr><td><code>components/CourtPleadingPreview.tsx</code></td><td>Court-style HTML petition preview</td></tr>
+<tr><td><code>components/CriminalAffidavitPreview.tsx</code></td><td>Application source</td></tr>
+<tr><td><code>components/CriminalApplicationsWriter.tsx</code></td><td>Criminal writer UI + preview + generate</td></tr>
+<tr><td><code>components/CriminalModuleForm.tsx</code></td><td>Per-module criminal form fields</td></tr>
+<tr><td><code>components/CriminalReferencer.tsx</code></td><td>Referencer UI</td></tr>
+<tr><td><code>components/DraftingPortalShell.tsx</code></td><td>Sidebar portal around tools</td></tr>
+<tr><td><code>components/FamilyAnnexureBLoop.tsx</code></td><td>Dowry Annexure-B item rows</td></tr>
+<tr><td><code>components/FamilyDynamicForm.tsx</code></td><td>Dynamic family form from schema</td></tr>
+<tr><td><code>components/FamilySuitWriter.tsx</code></td><td>Family suit writer UI</td></tr>
+<tr><td><code>components/FbrSecpHub.tsx</code></td><td>FBR / SECP checklists + links</td></tr>
+<tr><td><code>components/FirDirectionFormPanel.tsx</code></td><td>Application source</td></tr>
+<tr><td><code>components/LeadGate.tsx</code></td><td>Gate before first tool use</td></tr>
+<tr><td><code>components/LeadProvider.tsx</code></td><td>Lead context provider</td></tr>
+<tr><td><code>components/MaintenanceSuitWriter.tsx</code></td><td>Maintenance-only family writer</td></tr>
+<tr><td><code>components/OfficeMap.tsx</code></td><td>Chambers Google Maps embed</td></tr>
+<tr><td><code>components/PetitionPreview.tsx</code></td><td>Generic petition preview</td></tr>
+<tr><td><code>components/PortalFormShell.tsx</code></td><td>Application source</td></tr>
+<tr><td><code>components/PortalSearch.tsx</code></td><td>Portal law-field search UI</td></tr>
+<tr><td><code>components/ReferencerSearch.tsx</code></td><td>Application source</td></tr>
+<tr><td><code>components/RevenueApplicationsWriter.tsx</code></td><td>Revenue applications writer UI</td></tr>
+<tr><td><code>components/RevenuePartitionCanvasForm.tsx</code></td><td>Partition canvas / Naksha UI</td></tr>
+<tr><td><code>components/RevenuePartitionForm.tsx</code></td><td>Agri partition form</td></tr>
+<tr><td><code>components/SiteChrome.tsx</code></td><td>Site shell wrapper</td></tr>
+<tr><td><code>components/SiteFooter.tsx</code></td><td>Public site footer</td></tr>
+<tr><td><code>components/SiteHeader.tsx</code></td><td>Public site header/nav</td></tr>
+<tr><td><code>components/TemporaryInjunctionForm.tsx</code></td><td>Temporary injunction form (O39)</td></tr>
+<tr><td><code>components/TextPetition.tsx</code></td><td>Text petition renderer</td></tr>
+<tr><td><code>components/admin/AdminDashboard.tsx</code></td><td>Admin dashboard UI</td></tr>
+<tr><td><code>components/admin/AdminLoginForm.tsx</code></td><td>Admin login form</td></tr>
+</tbody></table>
+<h2>Libraries &amp; config (`lib/`)</h2>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>lib/auth.ts</code></td><td>Admin session cookie HMAC auth</td></tr>
+<tr><td><code>lib/caseLawCitations.ts</code></td><td>Case-law citation helpers</td></tr>
+<tr><td><code>lib/casePrepPrecedents.ts</code></td><td>Case-prep precedent data</td></tr>
+<tr><td><code>lib/civil-docx.ts</code></td><td>Civil .docx helpers</td></tr>
+<tr><td><code>lib/civil.ts</code></td><td>Civil plaint builders</td></tr>
+<tr><td><code>lib/civilOptions.ts</code></td><td>Civil suit type options</td></tr>
+<tr><td><code>lib/civilPrecedents.ts</code></td><td>Civil precedent notes</td></tr>
+<tr><td><code>lib/config/automationRegistry.ts</code></td><td>Automation module registry</td></tr>
+<tr><td><code>lib/config/familyFormSchema.ts</code></td><td>Family form schema</td></tr>
+<tr><td><code>lib/config/taxGuides.ts</code></td><td>FBR / SECP guide content</td></tr>
+<tr><td><code>lib/config/websiteContent.ts</code></td><td>Marketing site copy</td></tr>
+<tr><td><code>lib/criminal-docx.ts</code></td><td>Criminal .docx generation</td></tr>
+<tr><td><code>lib/criminal.ts</code></td><td>Criminal draft builders (25 modules)</td></tr>
+<tr><td><code>lib/criminalModuleFields.ts</code></td><td>Criminal module field metadata</td></tr>
+<tr><td><code>lib/criminalPrecedents.ts</code></td><td>Criminal precedent notes</td></tr>
+<tr><td><code>lib/db.ts</code></td><td>Prisma client singleton</td></tr>
+<tr><td><code>lib/extendedCriminalFormData.ts</code></td><td>Extended criminal form data</td></tr>
+<tr><td><code>lib/family.ts</code></td><td>Family suit template fill</td></tr>
+<tr><td><code>lib/familyPleading.ts</code></td><td>Family pleading assembly</td></tr>
+<tr><td><code>lib/firm.ts</code></td><td>Firm contact / office location config</td></tr>
+<tr><td><code>lib/firmCounsel.ts</code></td><td>Counsel name defaults</td></tr>
+<tr><td><code>lib/format.ts</code></td><td>Date / text formatting helpers</td></tr>
+<tr><td><code>lib/leadStorage.ts</code></td><td>Client lead storage helpers</td></tr>
+<tr><td><code>lib/legalUpload.ts</code></td><td>Legal upload types/helpers</td></tr>
+<tr><td><code>lib/legalUploadEngine.ts</code></td><td>Evidence upload engine</td></tr>
+<tr><td><code>lib/logToolUsage.ts</code></td><td>Client usage logging helper</td></tr>
+<tr><td><code>lib/logUsageServer.ts</code></td><td>Server usage log writer</td></tr>
+<tr><td><code>lib/maintenance.ts</code></td><td>Maintenance-only suit logic</td></tr>
+<tr><td><code>lib/portalSearchCatalog.ts</code></td><td>Portal search index data</td></tr>
+<tr><td><code>lib/practice.ts</code></td><td>Practice area definitions</td></tr>
+<tr><td><code>lib/revenue.ts</code></td><td>Revenue application builders</td></tr>
+<tr><td><code>lib/revenueCitations.ts</code></td><td>Revenue law citations</td></tr>
+<tr><td><code>lib/revenuePartition.ts</code></td><td>Agricultural partition logic</td></tr>
+<tr><td><code>lib/storage.ts</code></td><td>Local/storage helpers</td></tr>
+<tr><td><code>lib/types/drafting.ts</code></td><td>Shared drafting TypeScript types</td></tr>
+<tr><td><code>lib/ui.tsx</code></td><td>Shared UI primitives</td></tr>
+<tr><td><code>lib/writerClient.ts</code></td><td>Client helper for writer API</td></tr>
+<tr><td><code>lib/writerFormMap.ts</code></td><td>Form → API field mapping</td></tr>
+</tbody></table>
+<h2>Database (`prisma/`)</h2>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>prisma/schema.prisma</code></td><td>DB schema (leads, usage, referencer)</td></tr>
+<tr><td><code>prisma/seed.ts</code></td><td>Seed referencer / demo data</td></tr>
+</tbody></table>
+<h2>Scripts (`scripts/`)</h2>
+<table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+<tr><td><code>scripts/export-docs-pdf.mjs</code></td><td>This documentation PDF exporter</td></tr>
+<tr><td><code>scripts/generate-civil-docx.mjs</code></td><td>Seed/generate civil .docx templates</td></tr>
+<tr><td><code>scripts/generate-criminal-docx.mjs</code></td><td>Seed/generate criminal .docx templates</td></tr>
+<tr><td><code>scripts/generate-extended-criminal-docx.mjs</code></td><td>Extended criminal .docx generator</td></tr>
+<tr><td><code>scripts/rename-type-ids.mjs</code></td><td>Module type-id rename utility</td></tr>
+</tbody></table>
+<h2>Templates on disk (<code>templates/</code>)</h2>
+  <p>Plain-text and Word templates used by drafting modules.</p>
+  <ul class="compact">
+<li><code>templates/civil/permanent_injunction_declaratory.docx</code></li>
+<li><code>templates/civil/permanent_injunction_declaratory.txt</code></li>
+<li><code>templates/civil/precedents/sra_42_declaratory_lhc.md</code></li>
+<li><code>templates/civil/temporary_injunction_o39_r1_r2.docx</code></li>
+<li><code>templates/civil/temporary_injunction_o39_r1_r2.txt</code></li>
+<li><code>templates/criminal/200-private-complaint.txt</code></li>
+<li><code>templates/criminal/216-alteration-of-charges.txt</code></li>
+<li><code>templates/criminal/22a-22b-fir-direction.txt</code></li>
+<li><code>templates/criminal/439-criminal-revision.txt</code></li>
+<li><code>templates/criminal/491-552-minor-recovery.txt</code></li>
+<li><code>templates/criminal/516a-superdari.txt</code></li>
+<li><code>templates/criminal/accused_discharge_63.docx</code></li>
+<li><code>templates/criminal/accused_discharge_63.txt</code></li>
+<li><code>templates/criminal/bail_cancellation_497.docx</code></li>
+<li><code>templates/criminal/bail_cancellation_497.txt</code></li>
+<li><code>templates/criminal/criminal-appeal-conviction.txt</code></li>
+<li><code>templates/criminal/dispense-personal-attendance.txt</code></li>
+<li><code>templates/criminal/docx/200-private-complaint.docx</code></li>
+<li><code>templates/criminal/docx/216-alteration-of-charges.docx</code></li>
+<li><code>templates/criminal/docx/22a-22b-fir-direction.docx</code></li>
+<li><code>templates/criminal/docx/249a-acquittal.docx</code></li>
+<li><code>templates/criminal/docx/265k-acquittal.docx</code></li>
+<li><code>templates/criminal/docx/439-criminal-revision.docx</code></li>
+<li><code>templates/criminal/docx/491-552-minor-recovery.docx</code></li>
+<li><code>templates/criminal/docx/497-bail-post-arrest.docx</code></li>
+<li><code>templates/criminal/docx/498-bail-directions.docx</code></li>
+<li><code>templates/criminal/docx/516a-superdari.docx</code></li>
+<li><code>templates/criminal/docx/accused-discharge.docx</code></li>
+<li><code>templates/criminal/docx/accused_discharge_63.docx</code></li>
+<li><code>templates/criminal/docx/bail-cancellation-497.docx</code></li>
+<li><code>templates/criminal/docx/bail_cancellation_497.docx</code></li>
+<li><code>templates/criminal/docx/court-witness-summons.docx</code></li>
+<li><code>templates/criminal/docx/criminal-appeal-conviction.docx</code></li>
+<li><code>templates/criminal/docx/dispense-personal-attendance.docx</code></li>
+<li><code>templates/criminal/docx/electronic-evidence-164.docx</code></li>
+<li><code>templates/criminal/docx/electronic_evidence_164.docx</code></li>
+<li><code>templates/criminal/docx/exemption-adjournment.docx</code></li>
+<li><code>templates/criminal/docx/habeas-corpus-491.docx</code></li>
+<li><code>templates/criminal/docx/habeas_corpus_491.docx</code></li>
+<li><code>templates/criminal/docx/identification-parade.docx</code></li>
+<li><code>templates/criminal/docx/identification_parade.docx</code></li>
+<li><code>templates/criminal/docx/medical-board-reexamination.docx</code></li>
+<li><code>templates/criminal/docx/nbw-absconding-arrest.docx</code></li>
+<li><code>templates/criminal/docx/non-harassment-direction.docx</code></li>
+<li><code>templates/criminal/docx/perishable_property_516a.docx</code></li>
+<li><code>templates/criminal/docx/sentence_suspension_426.docx</code></li>
+<li><code>templates/criminal/docx/summon-accused-private-complaint.docx</code></li>
+<li><code>templates/criminal/docx/trial_severance_239.docx</code></li>
+<li><code>templates/criminal/docx/witness-recall-540.docx</code></li>
+<li><code>templates/criminal/docx/witness-summons-evidence.docx</code></li>
+<li><code>templates/criminal/docx/witness_recall_540.docx</code></li>
+<li><code>templates/criminal/electronic_evidence_164.docx</code></li>
+<li><code>templates/criminal/electronic_evidence_164.txt</code></li>
+<li><code>templates/criminal/exemption-adjournment.txt</code></li>
+<li><code>templates/criminal/habeas_corpus_491.docx</code></li>
+<li><code>templates/criminal/habeas_corpus_491.txt</code></li>
+<li><code>templates/criminal/identification_parade.docx</code></li>
+<li><code>templates/criminal/identification_parade.txt</code></li>
+<li><code>templates/criminal/medical-board-reexamination.txt</code></li>
+<li><code>templates/criminal/nbw-absconding-arrest.txt</code></li>
+<li><code>templates/criminal/non-harassment-direction.txt</code></li>
+<li><code>templates/criminal/perishable_property_516a.docx</code></li>
+<li><code>templates/criminal/precedents/further_inquiry_497_2.md</code></li>
+<li><code>templates/criminal/precedents/habeas_corpus_pld.md</code></li>
+<li><code>templates/criminal/sample/habeas_corpus_491.md</code></li>
+<li><code>templates/criminal/sentence_suspension_426.docx</code></li>
+<li><code>templates/criminal/summon-accused-private-complaint.txt</code></li>
+<li><code>templates/criminal/trial_severance_239.docx</code></li>
+<li><code>templates/criminal/witness-summons-evidence.txt</code></li>
+<li><code>templates/criminal/witness_recall_540.docx</code></li>
+<li><code>templates/criminal/witness_recall_540.txt</code></li>
+<li><code>templates/family/custody-guardians-wards-s25.txt</code></li>
+<li><code>templates/family/dower-maintenance-recovery.txt</code></li>
+<li><code>templates/family/dowry-annexure-b.txt</code></li>
+<li><code>templates/family/dowry-articles-recovery.txt</code></li>
+<li><code>templates/family/khula-dissolution.txt</code></li>
+<li><code>templates/family/restitution-conjugal-rights.txt</code></li>
+</ul>
+  <h2>Config & entry points</h2>
+  <table><thead><tr><th>File</th><th>Role</th></tr></thead><tbody>
+  <tr><td><code>package.json</code></td><td>Scripts: <code>dev</code>, <code>build</code>, <code>start</code>, db seed, docx generators</td></tr>
+  <tr><td><code>next.config.ts</code></td><td>Next.js configuration</td></tr>
+  <tr><td><code>tsconfig.json</code></td><td>TypeScript configuration</td></tr>
+  <tr><td><code>WARIS-LAW-FIRM-COMPLETE-PLAN.md</code></td><td>Master plan (source for Part A)</td></tr>
+  <tr><td><code>.env.example</code></td><td>Env template (do not commit secrets)</td></tr>
+  </tbody></table>
+  <p class="footer-note">End of Waris Law Firm Documentation (Plan + Coding Files)</p>
+  
+  </section>
+</body>
+</html>

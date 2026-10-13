@@ -1,0 +1,29 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+State VERSUS {{accused_name}}
+FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+APPLICATION FOR RECORDING / PRODUCTION OF ELECTRONIC EVIDENCE UNDER {{electronic_evidence_section}}
+
+Respectfully Sheweth:
+
+1. That the above-titled case is pending before this Honorable Court and electronic material is vital for just decision.
+
+2. That the electronic evidence / media sought to be produced is: {{electronic_media_desc}}.
+
+3. That production and formal recording of the said electronic evidence is necessary to establish the prosecution / defence case.
+
+4. That the applicant undertakes to produce the original devices / certified copies and to facilitate forensic examination if so directed.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Permit production and formal recording of the electronic evidence on the record.
+*   Issue such directions for custody, cloning, or forensic examination as may be necessary.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

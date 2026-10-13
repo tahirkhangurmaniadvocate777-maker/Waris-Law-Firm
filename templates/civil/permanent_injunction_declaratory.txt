@@ -1,0 +1,3 @@
+# Plaint for Permanent Injunction & Declaratory Suit (Specific Relief Act)
+# Placeholders use {snake_case} for docx-templates.
+# Generate .docx via: npm run generate:civil-docx

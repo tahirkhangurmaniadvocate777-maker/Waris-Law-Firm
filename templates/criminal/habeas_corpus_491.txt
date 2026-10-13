@@ -1,0 +1,40 @@
+IN THE COURT OF THE {{court_tier_name}}, {{court_city}}
+
+Criminal Misc. Application No. _________ / {{year}}
+
+{{petitioner_name}} son of {{petitioner_parentage}},
+Resident of {{petitioner_address}}.
+... PETITIONER
+
+                                VERSUS
+
+1. The Station House Officer (SHO), Police Station {{police_station}}.
+2. {{respondent_name}}.
+... RESPONDENTS
+
+APPLICATION UNDER SECTION 491 OF THE CODE OF CRIMINAL PROCEDURE, 1898 FOR PRODUCTION OF THE DETENUE NAMELY {{detenue_name}} AND FOR HIS / HER RELEASE FROM ILLEGAL DETENTION
+
+Respectfully Sheweth:
+
+1. That the Petitioner is a law-abiding citizen and is closely related to / concerned with the detenue namely {{detenue_name}}.
+
+2. That the detenue is being illegally confined / detained at {{detention_place}} without lawful authority.
+
+3. That on {{occurrence_date}}, the detenue was taken into custody / confined in the circumstances that {{offense_description}}.
+
+4. That the detention is illegal, without remand, and in violation of Articles 9 and 10 of the Constitution of the Islamic Republic of Pakistan, 1973.
+
+5. That the slower ordinary remedies are inadequate; immediate production under section 491 Cr.P.C. is necessary.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Direct Respondent No. 1 to produce the detenue namely {{detenue_name}} before this Honorable Court forthwith.
+*   Declare the detention illegal and order release / restoration of the detenue to liberty.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+PETITIONER
+Through:
+
+{{legal_counsel_footer}}
