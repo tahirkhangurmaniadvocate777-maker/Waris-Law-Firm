@@ -1,0 +1,39 @@
+IN THE COURT OF THE HONORABLE SESSIONS JUDGE / EX-OFFICIO JUSTICE OF PEACE, {{court_city}}
+
+Criminal Misc. Application No. _________ / {{year}}
+
+{{petitioner_name}} son of {{petitioner_parentage}},
+Resident of {{petitioner_address}}.
+... PETITIONER
+
+                                VERSUS
+
+1. The Station House Officer (SHO), Police Station {{police_station}}.
+2. {{proposed_accused_name}} son of {{proposed_accused_parentage}},
+   Resident of {{proposed_accused_address}}.
+... RESPONDENTS
+
+APPLICATION UNDER SECTIONS 22-A & 22-B OF THE CODE OF CRIMINAL PROCEDURE, 1898 FOR DIRECTION TO THE RESPONDENT NO. 1 TO REGISTER A FORMAL CRIMINAL CASE (FIR) AGAINST RESPONDENT NO. 2.
+
+Respectfully Sheweth:
+
+1. That the Petitioner is a peaceful and law-abiding citizen of Pakistan and a permanent resident of {{petitioner_city}}.
+
+2. That on {{occurrence_date}}, Respondent No. 2, with unknown accomplices, committed {{offense_description}} against the Petitioner.
+
+3. That the said act constitutes a cognizable offense under the Pakistan Penal Code (PPC) and attracts registration of a formal First Information Report.
+
+4. That the Petitioner approached the Station House Officer, Police Station {{police_station}}, on {{approach_date}} through a written application seeking registration of an FIR; however, the police refused to register the case and thereby failed in their duty under Section 154 of the Code of Criminal Procedure, 1898.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Accept the instant application.
+*   Direct Respondent No. 1 to register a formal criminal case (FIR) under Section 154 Cr.P.C. against Respondent No. 2.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+PETITIONER
+Through:
+
+{{legal_counsel_footer}}

@@ -1,0 +1,44 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE / GUARDIAN JUDGE, {{court_location}}
+
+Guardian Petition No. ___________ / 2026
+
+{{plaintiff_name}} {{plaintiff_relation}}
+Resident of: {{plaintiff_address}}
+Cell No: {{plaintiff_phone}}
+                                                        ... PETITIONER
+                                VERSUS
+
+{{defendant_name}} {{defendant_relation}}
+Resident of: {{defendant_address}}
+Cell No: {{defendant_phone}}
+                                                        ... RESPONDENT
+
+PETITION UNDER SECTION 25 OF THE GUARDIANS AND WARDS ACT, 1890 FOR THE RECOVERY OF CUSTODY OF MINORS
+
+
+RESPECTFULLY SHEWETH:
+
+1. That the Petitioner and the Respondent were married on {{marriage_date}} and out of the wedlock, minor children namely {{children_details}} were born.
+2. That the parties are now living separately / divorced, and the minor children are currently in the forced and illegal custody of the Respondent since {{custody_loss_date}}.
+3. That the Petitioner (mother) is legally entitled to the physical custody (Hizanat) of the minors due to their tender age.
+4. That the Respondent is an irresponsible individual, stays out for work all day, and there is no female house member to look after the emotional, mental, and physical well-being of the minors.
+5. That the welfare of the minors, which is the paramount consideration of law, lies exclusively with the mother, who can provide a safe, nurturing, and moral educational environment.
+6. That the cause of action arose on {{cause_of_action_date}} when the Respondent refused to return custody, within the territorial jurisdiction of this Honorable Court where the minors currently reside.
+
+PRAYER:
+It is, therefore, respectfully prayed that this Honorable Court may graciously accept this petition and:
+- Direct the Respondent to hand over the permanent physical custody of the minors to the Petitioner.
+- Grant any other relief which this Honorable Court deems fit and proper.
+
+
+                                                                _________________
+                                                                   PETITIONER
+Through:
+{{lawyer_name}}
+Advocate
+
+VERIFICATION:
+Verified on Oath at {{court_location}} on this {{current_date}}, that the contents of paragraphs 1 to 6 are true and correct to the best of my knowledge and belief, and the rest are based on information received.
+
+                                                                _________________
+                                                                   PETITIONER

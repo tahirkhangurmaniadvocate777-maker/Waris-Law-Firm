@@ -1,0 +1,81 @@
+IN THE COURT OF {{court_title}}, {{district}}
+
+Criminal Misc. Application No. _________ / {{year}}
+
+1.  {{petitioner_name}}
+    S/O, D/O, W/O {{petitioner_father}}, {{petitioner_caste}} by caste,
+    R/O {{petitioner_address}}, Tehsil & District {{district}}.
+    ...... Petitioner
+
+                                VERSUS
+
+1.  The State
+    Through Station House Officer (SHO), Police Station {{police_station}}, {{district}}.
+2.  {{respondent2_name}}
+    S/O {{respondent2_father}}, {{respondent2_caste}} by caste.
+3.  {{respondent3_name}}
+    S/O {{respondent3_father}}, {{respondent3_caste}} by caste.
+    Both R/O {{respondents_address}}, Tehsil & District {{district}}.
+    ...... Respondents
+
+APPLICATION UNDER SECTION 491 READ WITH SECTION 552 OF THE CODE OF CRIMINAL PROCEDURE, 1898 (CrPC) FOR THE IMMEDIATE RECOVERY AND RESTORATION OF THE MINOR DETENUE NAMELY: {{minor_name}} FROM THE ILLEGAL, FORCEFUL, AND UNLAWFUL DETENTION OF THE RESPONDENTS NO. 2 & 3.
+
+Respectfully Sheweth:
+
+1.  That the Petitioner is a law-abiding citizen of Pakistan, residing at the address mentioned above, and is the natural, legal, and biological parent ({{parent_role}}) of the minor detenue namely {{minor_name}}, aged about {{minor_age}} years.
+
+2.  That the minor detenue was residing comfortably, peacefully, and under the absolute loving care, financial guardianship, and direct supervision of the Petitioner at their lawful residence, where the minor's educational, emotional, and physical needs were being fully met.
+
+3.  That on {{incident_date}} at about {{incident_time}}, the Respondents No. 2 and 3, driven by ulterior motives and high-handedness, unlawfully formed a group, trespassed into the Petitioner's house, and through sheer physical intimidation, threats, and dynamic coercion, executed a sudden and forceful removal of the minor child, abruptly snatching the minor away from the lawful custody of the Petitioner.
+
+4.  That following this aggressive displacement, the Petitioner along with respectable elders of the locality and family mediators went to the residential house of the Respondents No. 2 and 3 on {{visit_date}} to inquire about the minor's well-being and exercise parental rights. However, the Respondents flagrantly demonstrated a strict and vehement refusal to let the parent visit, locking the minor inside a room and turning the Petitioner away with severe threats of physical violence and dire consequences should the Petitioner ever return to see the minor.
+
+5.  That the continuous and absolute denial of parental access, paired with the hostile domestic atmosphere maintained by the Respondents, constitutes an ongoing act of illegal, unauthorized, and punitive confinement of the minor child, severely alienating them from their natural guardian.
+
+6.  That the minor detenue is of tender age and entirely dependent upon the Petitioner for emotional security, nutrition, and daily care; the psychological trauma of this abrupt isolation has gravely endangered the minor's mental and physical health, putting their overall welfare in imminent danger.
+
+7.  That the Respondents possess absolutely no legal right, title, decree, or superior guardian status under any law to forcibly retain the minor child away from their living biological parent.
+
+8.  That the matter dictates extreme urgency as the child's life, safety, and psychological equilibrium are at stake, making the slower, technical remedies of the Family or Guardian Courts completely inadequate for immediate relief.
+
+PRAYER
+
+Under the circumstances respectfully detailed above, it is most humbly prayed that this Honorable Court may graciously display immediate intervention in the interest of justice and direct Respondent No. 1 (SHO) to:
+
+*   Locate and recover the minor detenue namely {{minor_name}} immediately from the unlawful, forceful clutches and custody of Respondents No. 2 & 3.
+*   Produce the minor detenue safely before this Honorable Court.
+*   Restore and hand over the absolute custody of the minor detenue to the Petitioner, ensuring their safety and the preservation of their legal welfare.
+
+Any other relief that this Honorable Court deems fit and proper under the facts of the case may also be generously awarded.
+
+PETITIONER
+Through:
+
+{{advocate_name}}
+Advocate High Court,
+District Courts, Dera Ghazi Khan.
+
+
+================================================================================
+BEFORE THE {{court_title}}, {{district}}
+
+Criminal Misc. Application No. _________ / {{year}}
+
+{{petitioner_name}}
+VERSUS
+SHO & Others
+
+AFFIDAVIT
+
+I, {{petitioner_name}} S/O, D/O, W/O {{petitioner_father}}, {{petitioner_caste}} by caste, R/O {{petitioner_address}}, Tehsil & District {{district}}, do hereby solemnly affirm and declare on oath as under:
+
+1.  That the deponent is the Petitioner in the accompanying main application and is thoroughly conversant with all the underlying facts and circumstances narrated therein.
+2.  That the contents of paragraphs No. 1 to 8 of the accompanying application are true and correct to the best of my personal knowledge, information, and belief, and nothing material has been concealed, suppressed, or distorted therein.
+
+DEPONENT
+
+VERIFICATION
+
+Verified on Oath at {{district}} on this {{verification_day}} day of {{verification_month}} {{verification_year}}, that all the assertions made in the above affidavit are absolutely true and correct to the best of my knowledge, and no part of it is false.
+
+DEPONENT

@@ -1,0 +1,45 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE, {{court_location}}
+
+Family Suit No. ___________ / 2026
+
+{{plaintiff_name}} {{plaintiff_relation}}
+Resident of: {{plaintiff_address}}
+Cell No: {{plaintiff_phone}}
+                                                        ... PLAINTIFF
+                                VERSUS
+
+{{defendant_name}} {{defendant_relation}}
+Resident of: {{defendant_address}}
+Cell No: {{defendant_phone}}
+                                                        ... DEFENDANT
+
+SUIT FOR THE RECOVERY OF DOWRY ARTICLES AND BRIDAL GIFTS OR VALUE THEREOF
+
+
+RESPECTFULLY SHEWETH:
+
+1. That the marriage between the Plaintiff and the Defendant was solemnized on {{marriage_date}} according to Muslim Rites.
+2. That at the time of marriage, the parents of the Plaintiff handed over valuable dowry articles (Jahez) including furniture, electronics, and gold ornaments to the Defendant, details of which are explicitly recorded in the attached list (Annexure-B).
+3. That the Defendant and his family also gifted bridal items (Bari) totaling {{bari_gold_weight}} to the Plaintiff which is her absolute property.
+4. That when the Plaintiff was ousted from the house on {{abandonment_date}}, the Defendant forcibly retained all the dowry articles and jewelry in his custody and refused to return them despite repeated demands.
+5. That the total estimated value of the unrecovered dowry articles at current market rates is PKR {{total_dowry_value}}.
+6. That the cause of action arose on {{cause_of_action_date}} when the Defendant flatly refused to return the items upon final demand, within the jurisdiction of this court.
+7. That the proper court fee has been affixed on the plaint.
+
+PRAYER:
+It is, therefore, respectfully prayed that this Honorable Court may graciously pass a decree in favor of the Plaintiff against the Defendant for:
+- The recovery of dowry articles and bridal gifts as per the attached list, or in the alternative, the total market value thereof amounting to PKR {{total_dowry_value}}.
+- Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+
+                                                                _________________
+                                                                    PLAINTIFF
+Through:
+{{lawyer_name}}
+Advocate
+
+VERIFICATION:
+Verified on Oath at {{court_location}} on this {{current_date}}, that the contents of paragraphs 1 to 7 are true and correct to the best of my knowledge and belief, and the rest are based on information received.
+
+                                                                _________________
+                                                                    PLAINTIFF

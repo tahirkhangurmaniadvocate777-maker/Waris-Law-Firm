@@ -1,0 +1,26 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+State VERSUS {{accused_name}}
+{{fir_caption_line}}
+
+APPLICATION SEEKING THE CONSTITUTION OF A STANDING MEDICAL BOARD FOR THE RE-EXAMINATION OF THE ALLEGED INJURIES OF THE COMPLAINANT.
+
+Respectfully Sheweth:
+
+1. That the initial Medico-Legal Certificate (MLC) is fabricated / biased and does not align with the actual physical impacts.
+
+2. That the complainant has exaggerated minor scratches into severe fractures in order to attract prohibitory clauses.
+
+3. That an independent Medical Board assessment is critical for just decision of the case.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Direct the Health Department / Medical Superintendent, District Hospital, to constitute a Standing Medical Board to re-examine the complainant.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through:
+
+{{legal_counsel_footer}}

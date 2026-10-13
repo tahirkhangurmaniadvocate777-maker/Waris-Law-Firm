@@ -1,0 +1,36 @@
+IN THE HONORABLE {{appellate_court_name}}, {{court_city}}
+
+Criminal Appeal No. _________ / {{year}}
+
+{{appellant_name}} son of {{appellant_parentage}},
+Currently confined in Central Jail {{jail_location}}.
+... APPELLANT
+
+                                VERSUS
+
+The State
+... RESPONDENT
+
+CRIMINAL APPEAL UNDER SECTION {{appeal_statute_section}} OF THE CODE OF CRIMINAL PROCEDURE, 1898 AGAINST JUDGMENT OF CONVICTION DATED {{judgment_date}} IN FIR NO. {{fir_number}}.
+
+Respectfully Sheweth:
+
+1. That the Appellant was tried by {{trial_judge_title}} and was erroneously convicted and sentenced to {{sentence_duration}} under {{conviction_sections}}.
+
+2. That the impugned judgment is against the law, the weight of evidence, and the settled principles of justice.
+
+3. That the prosecution failed to produce independent eyewitnesses, and the alleged recovery was engineered.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Accept the instant appeal.
+*   Set aside the conviction and sentence recorded against the Appellant.
+*   Acquit the Appellant of the charge.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPELLANT
+Through:
+
+{{legal_counsel_footer}}

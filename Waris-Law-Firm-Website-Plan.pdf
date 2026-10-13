@@ -1,0 +1,1211 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 3986 >>
+stream
+BT
+/F2 16 Tf
+1 0 0 1 54 732 Tm
+(WARIS LAW FIRM -- COMPLETE PROJECT PLAN) Tj
+/F2 13 Tf
+1 0 0 1 54 698 Tm
+(Website + Legal Automation Tools) Tj
+/F1 10 Tf
+1 0 0 1 54 670 Tm
+(Document: Single master plan \(all modules\) -- refreshed to match current implemented reality) Tj
+/F1 10 Tf
+1 0 0 1 54 657 Tm
+(\(Oct 2026\)) Tj
+/F1 10 Tf
+1 0 0 1 54 644 Tm
+(Advocate: Muhammad Tahir Khan Gurmani, Advocate High Court) Tj
+/F1 10 Tf
+1 0 0 1 54 631 Tm
+(Firm: Waris Law Office / Waris Law Firm) Tj
+/F1 10 Tf
+1 0 0 1 54 618 Tm
+(Office: Office No. 40, Ground Floor, Quaid-E-Azam Block, District Courts, Dera Ghazi Khan) Tj
+/F1 10 Tf
+1 0 0 1 54 605 Tm
+(Phones: 0334-7744739 | 0300-1652953) Tj
+/F1 10 Tf
+1 0 0 1 54 592 Tm
+(Emails: [warislawofficedbadgk@gmail.com]\(mailto:warislawofficedbadgk@gmail.com\) |) Tj
+/F1 10 Tf
+1 0 0 1 54 579 Tm
+([muhammadtahirkhangurmaniadvocatedbadgk@outlook.com]\(mailto:muhammadtahirkhangurmaniadvocate) Tj
+/F1 10 Tf
+1 0 0 1 54 566 Tm
+(dbadgk@outlook.com\) |) Tj
+/F1 10 Tf
+1 0 0 1 54 553 Tm
+([tahirkhangurmaniadvocate777@gmail.com]\(mailto:tahirkhangurmaniadvocate777@gmail.com\)) Tj
+/F1 10 Tf
+1 0 0 1 54 540 Tm
+(Practice areas: Criminal Law | Civil Law | Revenue Law | Family Law | FBR / Tax & Corporate) Tj
+/F1 10 Tf
+1 0 0 1 54 527 Tm
+(| Writ Petition) Tj
+/F1 8 Tf
+1 0 0 1 54 506 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 476 Tm
+(0. Implementation status \(current\)) Tj
+/F1 10 Tf
+1 0 0 1 54 448 Tm
+(Area | Status ) Tj
+/F1 10 Tf
+1 0 0 1 54 435 Tm
+(Marketing site \(Home, Practice Areas, About, Contact\) | Live in app ) Tj
+/F1 10 Tf
+1 0 0 1 54 422 Tm
+(Contact chambers map | Implemented \(Google Maps embed + open-in-Maps link\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 409 Tm
+(Tools hub + drafting portal shell | Implemented ) Tj
+/F1 10 Tf
+1 0 0 1 54 396 Tm
+(Portal law-field search | Implemented \(sidebar search across practice areas + tools\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 383 Tm
+(Criminal Trial Referencer | Implemented \(Prisma + admin CRUD\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 370 Tm
+(Criminal Applications Writer | 25 modules \(live preview + .docx via API\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 357 Tm
+(Civil / Family / Revenue writers | Implemented ) Tj
+/F1 10 Tf
+1 0 0 1 54 344 Tm
+(Family templates on disk | 6 locked templates \(+ maintenance-only UI type\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 331 Tm
+(FBR / SECP Practice Hub | Implemented \(checklists + links\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 318 Tm
+(Lead capture + usage logs | Implemented ) Tj
+/F1 10 Tf
+1 0 0 1 54 305 Tm
+(Admin \(/admin\) | Implemented \(session cookie\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 292 Tm
+(Writer API | POST /api/v1/writer/generate \(docx / json\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 271 Tm
+(This document is the saved complete plan for the firm website and drafting tools. It) Tj
+/F1 10 Tf
+1 0 0 1 54 258 Tm
+(reflects what is built in the codebase, not only the original v1 sketch.) Tj
+/F1 8 Tf
+1 0 0 1 54 237 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 207 Tm
+(1. Goal) Tj
+/F1 10 Tf
+1 0 0 1 54 179 Tm
+(Public website for the firm plus freely usable drafting tools for criminal, civil, family,) Tj
+/F1 10 Tf
+1 0 0 1 54 166 Tm
+(and revenue matters, plus an FBR / SECP practice guide hub.) Tj
+/F1 10 Tf
+1 0 0 1 54 145 Tm
+(- Anyone who visits or uses a tool: name, phone, email saved in Administration.) Tj
+/F1 10 Tf
+1 0 0 1 54 132 Tm
+(- Drafts: live HTML petition preview + browser Print / Save as PDF; criminal modules also) Tj
+/F1 10 Tf
+1 0 0 1 54 119 Tm
+(download court-style .docx.) Tj
+/F1 10 Tf
+1 0 0 1 54 106 Tm
+(- Tax/corporate modules = checklists + official portal links only \(no IRIS/eZfile login from) Tj
+/F1 10 Tf
+1 0 0 1 54 93 Tm
+(this site\).) Tj
+/F1 10 Tf
+1 0 0 1 54 80 Tm
+(- Disclaimer on all tools: assistance only; filing remains advocate/user responsibility.) Tj
+ET
+
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 3887 >>
+stream
+BT
+/F1 8 Tf
+1 0 0 1 54 738 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 708 Tm
+(2. Tech stack) Tj
+/F1 10 Tf
+1 0 0 1 54 680 Tm
+(Layer | Choice ) Tj
+/F1 10 Tf
+1 0 0 1 54 667 Tm
+(Frontend | Next.js 15 \(App Router\) + React 19 + TypeScript + Tailwind CSS 4 ) Tj
+/F1 10 Tf
+1 0 0 1 54 654 Tm
+(Database | SQLite via Prisma \(leads, usage logs, referencer content\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 641 Tm
+(Admin | Password-protected /admin \(HMAC session cookie waris_admin_session\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 628 Tm
+(Criminal output | HTML preview + docx package ? .docx download ) Tj
+/F1 10 Tf
+1 0 0 1 54 615 Tm
+(Print | HTML petition preview + browser Print / Save as PDF ) Tj
+/F1 10 Tf
+1 0 0 1 54 602 Tm
+(Docx seed script | npm run generate:criminal-docx ? scripts/generate-criminal-docx.mjs ) Tj
+/F2 11 Tf
+1 0 0 1 54 577 Tm
+(Admin password note) Tj
+/F1 10 Tf
+1 0 0 1 54 555 Tm
+(- Env var: ADMIN_PASSWORD) Tj
+/F1 10 Tf
+1 0 0 1 54 542 Tm
+(- Default fallback if unset: waris-admin-2026 \(see lib/auth.ts\)) Tj
+/F1 10 Tf
+1 0 0 1 54 529 Tm
+(- Change via .env for production; do not commit real secrets.) Tj
+/F1 8 Tf
+1 0 0 1 54 508 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 478 Tm
+(3. Site map & routes) Tj
+/F1 8.5 Tf
+1 0 0 1 54 450 Tm
+(Home ? Practice Areas | About | Contact | Tools Hub) Tj
+/F1 8.5 Tf
+1 0 0 1 54 439 Tm
+(Tools Hub ? Drafting Portal \(sidebar\) ?) Tj
+/F1 8.5 Tf
+1 0 0 1 54 428 Tm
+(Criminal Trial Referencer) Tj
+/F1 8.5 Tf
+1 0 0 1 54 417 Tm
+(Criminal Applications Writer \(?type=?\) ? Preview + Generate .docx) Tj
+/F1 8.5 Tf
+1 0 0 1 54 406 Tm
+(Civil Suit Writer ? Printable draft) Tj
+/F1 8.5 Tf
+1 0 0 1 54 395 Tm
+(Family Suit Writer \(?type=?\) ? Printable draft \(+ Annexure-B for dowry\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 384 Tm
+(Revenue Applications Writer ? Printable draft) Tj
+/F1 8.5 Tf
+1 0 0 1 54 373 Tm
+(FBR / SECP Practice Hub ? Checklists + links) Tj
+/F1 8.5 Tf
+1 0 0 1 54 362 Tm
+(Public use ? Lead capture ? Admin database) Tj
+/F1 10 Tf
+1 0 0 1 54 343 Tm
+(Route | Purpose ) Tj
+/F1 10 Tf
+1 0 0 1 54 330 Tm
+(/ | Brand-forward hero; CTAs Contact + Tools ) Tj
+/F1 10 Tf
+1 0 0 1 54 317 Tm
+(/practice-areas | Criminal, Civil, Family, Revenue, FBR/Corporate, Writ ) Tj
+/F1 10 Tf
+1 0 0 1 54 304 Tm
+(/about | Advocate profile \(DG Khan / High Court\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 291 Tm
+(/contact | Address, phones, emails, inquiry form, chambers map ) Tj
+/F1 10 Tf
+1 0 0 1 54 278 Tm
+(/tools | Hub for all tools ) Tj
+/F1 10 Tf
+1 0 0 1 54 265 Tm
+(/tools/criminal-trial-referencer | Searchable trial stages / sections / notes ) Tj
+/F1 10 Tf
+1 0 0 1 54 252 Tm
+(/tools/criminal-applications-writer | Criminal applications \(25 types via ?type=\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 239 Tm
+(/tools/civil-suit-writer | Civil plaints \(Order VII\) ? print ) Tj
+/F1 10 Tf
+1 0 0 1 54 226 Tm
+(/tools/family-suit-writer | Family Court suits ? print ) Tj
+/F1 10 Tf
+1 0 0 1 54 213 Tm
+(/tools/revenue-applications-writer | LRA applications + agri partition ? print ) Tj
+/F1 10 Tf
+1 0 0 1 54 200 Tm
+(/tools/fbr-secp-practice | IRIS / eZfile checklists + official links ) Tj
+/F1 10 Tf
+1 0 0 1 54 187 Tm
+(/admin | Leads, usage logs, referencer CRUD ) Tj
+/F2 11 Tf
+1 0 0 1 54 162 Tm
+(API routes) Tj
+/F1 10 Tf
+1 0 0 1 54 140 Tm
+(Route | Method | Purpose ) Tj
+/F1 10 Tf
+1 0 0 1 54 127 Tm
+(/api/leads | POST | Lead capture ) Tj
+/F1 10 Tf
+1 0 0 1 54 114 Tm
+(/api/usage | POST | Usage logging ) Tj
+/F1 10 Tf
+1 0 0 1 54 101 Tm
+(/api/admin/login | POST | Admin password login ) Tj
+/F1 10 Tf
+1 0 0 1 54 88 Tm
+(/api/admin/logout | POST | Clear admin session ) Tj
+/F1 10 Tf
+1 0 0 1 54 75 Tm
+(/api/admin/referencer | * | Referencer content CRUD ) Tj
+ET
+
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 3789 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 54 738 Tm
+(/api/v1/writer/generate | POST | Criminal draft ? .docx or JSON ) Tj
+/F1 10 Tf
+1 0 0 1 54 717 Tm
+(Generate body \(criminal\): { type: CriminalAppType, fields: {...}, format?: "docx" | "json" }) Tj
+/F1 10 Tf
+1 0 0 1 54 704 Tm
+(Returns attachment .docx \(default\) or JSON draft when format: "json". Logs usage as) Tj
+/F1 10 Tf
+1 0 0 1 54 691 Tm
+(criminal-applications-writer / {type}:{format}.) Tj
+/F1 8 Tf
+1 0 0 1 54 670 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 640 Tm
+(4. Drafting portal \(UI\)) Tj
+/F1 10 Tf
+1 0 0 1 54 612 Tm
+(Implemented as DraftingPortalShell around tools pages:) Tj
+/F1 10 Tf
+1 0 0 1 54 591 Tm
+(- Portal search: sidebar search bar \(PortalSearch + portalSearchCatalog\) across practice) Tj
+/F1 10 Tf
+1 0 0 1 54 578 Tm
+(areas, criminal/family/civil/revenue modules, and FBR/SECP guides) Tj
+/F1 10 Tf
+1 0 0 1 54 565 Tm
+(- Criminal primary nav: FIR Direction \(22-A/B\), Bail \(497/498\), Superdari \(516-A\),) Tj
+/F1 10 Tf
+1 0 0 1 54 552 Tm
+(Attendance exemption) Tj
+/F1 10 Tf
+1 0 0 1 54 539 Tm
+(- Criminal more: full remaining module list \(491-552, NBW, appeals, ID parade, habeas, etc.\)) Tj
+/F1 10 Tf
+1 0 0 1 54 526 Tm
+(- Family primary: Khula, Dower & maintenance, Dowry + Annexure-B, Custody, Restitution,) Tj
+/F1 10 Tf
+1 0 0 1 54 513 Tm
+(Maintenance only) Tj
+/F1 10 Tf
+1 0 0 1 54 500 Tm
+(- Other tools: Referencer, Civil, Revenue, FBR/SECP) Tj
+/F1 10 Tf
+1 0 0 1 54 487 Tm
+(- Deep links use query ?type= on criminal and family writers) Tj
+/F1 10 Tf
+1 0 0 1 54 474 Tm
+(- Module-specific forms via criminalModuleMeta + CriminalModuleForm / PortalFormShell) Tj
+/F1 10 Tf
+1 0 0 1 54 461 Tm
+(- Lead gate before first tool use \(LeadGate\)) Tj
+/F1 10 Tf
+1 0 0 1 54 448 Tm
+(- Contact map: OfficeMap embeds Quaid-E-Azam Block / District Courts pin) Tj
+/F1 10 Tf
+1 0 0 1 54 435 Tm
+(\(firm.officeLocation\)) Tj
+/F1 8 Tf
+1 0 0 1 54 414 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 384 Tm
+(5. Lead / Administration) Tj
+/F1 10 Tf
+1 0 0 1 54 356 Tm
+(Capture fields: Full name, phone, email \(+ optional city / matter type\)) Tj
+/F1 10 Tf
+1 0 0 1 54 343 Tm
+(When: Contact form + before first tool use) Tj
+/F1 10 Tf
+1 0 0 1 54 330 Tm
+(Log: Timestamp, tool used, draft/application type) Tj
+/F1 10 Tf
+1 0 0 1 54 317 Tm
+(Access: /admin only \(password session; see ?2\)) Tj
+/F1 8 Tf
+1 0 0 1 54 296 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 266 Tm
+(6. Tool 1 -- Criminal Trial Referencer) Tj
+/F1 10 Tf
+1 0 0 1 54 238 Tm
+(Searchable index with filters:) Tj
+/F1 10 Tf
+1 0 0 1 54 217 Tm
+(- Categories: trial stage, CrPC/PPC section, case law, checklist, timeline, citation) Tj
+/F1 10 Tf
+1 0 0 1 54 204 Tm
+(- Search: title, section number, keywords, notes) Tj
+/F1 10 Tf
+1 0 0 1 54 191 Tm
+(- Detail: short note, related sections, practical checklist) Tj
+/F1 10 Tf
+1 0 0 1 54 178 Tm
+(- Seed: investigation ? challan ? charge ? evidence ? 249-A / 265-K / judgment) Tj
+/F1 10 Tf
+1 0 0 1 54 165 Tm
+(- Admin can add / edit / delete entries \(/api/admin/referencer\)) Tj
+/F1 8 Tf
+1 0 0 1 54 144 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 114 Tm
+(7. Tool 2 -- Criminal Applications Writer \(25 modules\)) Tj
+/F1 10 Tf
+1 0 0 1 54 86 Tm
+(Flow: Select type \(?type= or dropdown\) ? lead fields \(if needed\) ? module form ? live) Tj
+/F1 10 Tf
+1 0 0 1 54 73 Tm
+(preview ? Generate .docx \(POST /api/v1/writer/generate\) and/or Print / PDF ? usage log) Tj
+ET
+
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 4263 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 54 738 Tm
+(Offense law dropdown \(where relevant\): PPC | EMO | AMLA | CNSA | Other) Tj
+/F1 10 Tf
+1 0 0 1 54 717 Tm
+(Default grounds for 249-A / 265-K:) Tj
+/F1 10 Tf
+1 0 0 1 54 696 Tm
+(1. Groundless charge at any stage of trial) Tj
+/F1 10 Tf
+1 0 0 1 54 683 Tm
+(2. Lack of incriminating material on record) Tj
+/F1 10 Tf
+1 0 0 1 54 670 Tm
+(3. Zero probability of ultimate conviction) Tj
+/F2 11 Tf
+1 0 0 1 54 645 Tm
+(7.1 Full module list \(`criminalAppOptions`\)) Tj
+/F1 10 Tf
+1 0 0 1 54 623 Tm
+(# | ID | Label ) Tj
+/F1 10 Tf
+1 0 0 1 54 610 Tm
+(1 | 497 | Bail application u/s 497 Cr.P.C. \(post-arrest\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 597 Tm
+(2 | 498 | Application u/s 498 Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 584 Tm
+(3 | 249A | Application u/s 249-A Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 571 Tm
+(4 | 265K | Application u/s 265-K Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 558 Tm
+(5 | court-witness | Summoning of witness as Court Witness ) Tj
+/F1 10 Tf
+1 0 0 1 54 545 Tm
+(6 | 491-552 | Application u/s 491 r/w 552 Cr.P.C. \(recovery of minor detenue\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 532 Tm
+(7 | 22A-22B | Application u/s 22-A & 22-B Cr.P.C. \(direction to register FIR\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 519 Tm
+(8 | 516A | Application u/s 516-A Cr.P.C. \(release on Superdari\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 506 Tm
+(9 | NBW | Application for Non-Bailable Arrest Warrants \(absconding accused\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 493 Tm
+(10 | DISPENSE | Application to dispense with personal attendance of accused ) Tj
+/F1 10 Tf
+1 0 0 1 54 480 Tm
+(11 | 216 | Application u/s 216 Cr.P.C. \(alteration of charges\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 467 Tm
+(12 | NONHARASS | Application for direction not to harass / deter petitioner \(Saiel\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 454 Tm
+(13 | APPEAL | Criminal Appeal against conviction ) Tj
+/F1 10 Tf
+1 0 0 1 54 441 Tm
+(14 | REVISION | Criminal Revision u/s 439 / 439-A Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 428 Tm
+(15 | 200 | Private Complaint u/s 200 Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 415 Tm
+(16 | SUMMON200 | Application to summon accused \(private complaint u/s 200\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 402 Tm
+(17 | WITNESS-SUMMONS | Application for summoning witnesses to record evidence ) Tj
+/F1 10 Tf
+1 0 0 1 54 389 Tm
+(18 | MEDICAL-BOARD | Application for constitution of Medical Board \(re-examination\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 376 Tm
+(19 | EXEMPT-ADJOURN | Application for exemption from appearance and adjournment ) Tj
+/F1 10 Tf
+1 0 0 1 54 363 Tm
+(20 | ID-PARADE | Application for identification parade ) Tj
+/F1 10 Tf
+1 0 0 1 54 350 Tm
+(21 | DISCHARGE-63 | Application for discharge of accused \(s.63 / editable\) ) Tj
+/F1 10 Tf
+1 0 0 1 54 337 Tm
+(22 | HABEAS-491 | Habeas corpus / production of person u/s 491 Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 324 Tm
+(23 | WITNESS-RECALL-540 | Application for recall of witness u/s 540 Cr.P.C. ) Tj
+/F1 10 Tf
+1 0 0 1 54 311 Tm
+(24 | E-EVIDENCE-164 | Application for recording / production of electronic evidence ) Tj
+/F1 10 Tf
+1 0 0 1 54 298 Tm
+(25 | BAIL-CANCEL-497 | Application for cancellation of bail u/s 497 Cr.P.C. ) Tj
+/F2 11 Tf
+1 0 0 1 54 273 Tm
+(7.2 Six newer modules \(ID-PARADE set\)) Tj
+/F1 10 Tf
+1 0 0 1 54 251 Tm
+(Added after the core 13+ set:) Tj
+/F1 10 Tf
+1 0 0 1 54 230 Tm
+(1. ID-PARADE -- identification parade) Tj
+/F1 10 Tf
+1 0 0 1 54 217 Tm
+(2. DISCHARGE-63 -- discharge \(editable section, default 63\)) Tj
+/F1 10 Tf
+1 0 0 1 54 204 Tm
+(3. HABEAS-491 -- habeas / production u/s 491) Tj
+/F1 10 Tf
+1 0 0 1 54 191 Tm
+(4. WITNESS-RECALL-540 -- recall of witness u/s 540) Tj
+/F1 10 Tf
+1 0 0 1 54 178 Tm
+(5. E-EVIDENCE-164 -- electronic evidence recording / production) Tj
+/F1 10 Tf
+1 0 0 1 54 165 Tm
+(6. BAIL-CANCEL-497 -- cancellation of bail u/s 497) Tj
+/F2 11 Tf
+1 0 0 1 54 140 Tm
+(7.3 Notable earlier expansions \(beyond original 5\)) Tj
+/F1 10 Tf
+1 0 0 1 54 118 Tm
+(- 22A-22B -- FIR registration direction \(Justice of Peace\)) Tj
+/F1 10 Tf
+1 0 0 1 54 105 Tm
+(- 491-552 -- minor recovery \(+ affidavit\)) Tj
+/F1 10 Tf
+1 0 0 1 54 92 Tm
+(- 516A -- Superdari / property release) Tj
+/F1 10 Tf
+1 0 0 1 54 79 Tm
+(- NBW -- non-bailable warrants for absconding accused) Tj
+ET
+
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 3404 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 54 738 Tm
+(- Plus: DISPENSE, 216, NONHARASS, APPEAL, REVISION, 200, SUMMON200, WITNESS-SUMMONS,) Tj
+/F1 10 Tf
+1 0 0 1 54 725 Tm
+(MEDICAL-BOARD, EXEMPT-ADJOURN) Tj
+/F2 11 Tf
+1 0 0 1 54 700 Tm
+(7.4 Template / docx inventory \(criminal\)) Tj
+/F1 10 Tf
+1 0 0 1 54 678 Tm
+(Plain-text templates under templates/criminal/ and Word sources under) Tj
+/F1 10 Tf
+1 0 0 1 54 665 Tm
+(templates/criminal/docx/ \(and some dual-named .docx in the parent folder\). Generation uses) Tj
+/F1 10 Tf
+1 0 0 1 54 652 Tm
+(lib/criminal-docx.ts + live buildCriminalDraft in lib/criminal.ts.) Tj
+/F1 10 Tf
+1 0 0 1 54 631 Tm
+(Examples on disk:) Tj
+/F1 8.5 Tf
+1 0 0 1 54 610 Tm
+(templates/criminal/) Tj
+/F1 8.5 Tf
+1 0 0 1 54 599 Tm
+(22a-22b-fir-direction.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 588 Tm
+(491-552-minor-recovery.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 577 Tm
+(516a-superdari.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 566 Tm
+(nbw-absconding-arrest.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 555 Tm
+(identification_parade.txt \(+ .docx\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 544 Tm
+(accused_discharge_63.txt \(+ .docx\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 533 Tm
+(habeas_corpus_491.txt \(+ .docx\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 522 Tm
+(witness_recall_540 / electronic_evidence_164 / bail_cancellation_497 ?) Tj
+/F1 8.5 Tf
+1 0 0 1 54 511 Tm
+(docx/ ? paired .docx for each module \(497, 498, 249a, 265k, 22a-22b, ?\)) Tj
+/F1 8 Tf
+1 0 0 1 54 492 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 462 Tm
+(8. Tool 3 -- Civil Suit Writer \(CPC 1908\)) Tj
+/F1 10 Tf
+1 0 0 1 54 434 Tm
+(Structural flow:) Tj
+/F1 10 Tf
+1 0 0 1 54 421 Tm
+(Plaint \(Orders VI & VII\) ? Written Statement \(Order VIII\) ? Issues & Trial \(Order XIV\)) Tj
+/F1 10 Tf
+1 0 0 1 54 400 Tm
+(Every plaint includes \(Order VII Rule 1\):) Tj
+/F1 10 Tf
+1 0 0 1 54 379 Tm
+(1. Heading & forum \(Civil Judge Class I/II/III; Sec. 15-20 CPC\)) Tj
+/F1 10 Tf
+1 0 0 1 54 366 Tm
+(2. Title of parties) Tj
+/F1 10 Tf
+1 0 0 1 54 353 Tm
+(3. Nature of suit) Tj
+/F1 10 Tf
+1 0 0 1 54 340 Tm
+(4. Statement of facts \(numbered paragraphs\)) Tj
+/F1 10 Tf
+1 0 0 1 54 327 Tm
+(5. Cause of action) Tj
+/F1 10 Tf
+1 0 0 1 54 314 Tm
+(6. Jurisdiction clause) Tj
+/F1 10 Tf
+1 0 0 1 54 301 Tm
+(7. Valuation & court-fee clause) Tj
+/F1 10 Tf
+1 0 0 1 54 288 Tm
+(8. Prayer) Tj
+/F1 10 Tf
+1 0 0 1 54 275 Tm
+(9. Verification + List of Documents + Address Form placeholders) Tj
+/F1 10 Tf
+1 0 0 1 54 254 Tm
+(Kinds of suits \(dropdown\):) Tj
+/F1 10 Tf
+1 0 0 1 54 233 Tm
+(1. Declaratory suit -- Sec. 42 Specific Relief Act 1877) Tj
+/F1 10 Tf
+1 0 0 1 54 220 Tm
+(2. Permanent / mandatory injunction -- Sec. 53-55 SRA) Tj
+/F1 10 Tf
+1 0 0 1 54 207 Tm
+(3. Specific performance of contract -- Sec. 12 SRA) Tj
+/F1 10 Tf
+1 0 0 1 54 194 Tm
+(4. Possession & mesne profits -- Sec. 8/9 SRA) Tj
+/F1 10 Tf
+1 0 0 1 54 181 Tm
+(5. Cancellation of documents -- Sec. 39 SRA) Tj
+/F1 10 Tf
+1 0 0 1 54 168 Tm
+(6. Suit for damages / torts) Tj
+/F1 10 Tf
+1 0 0 1 54 155 Tm
+(7. Urban / built-up partition -- Partition Act 1893) Tj
+/F1 10 Tf
+1 0 0 1 54 142 Tm
+(8. Other / custom title) Tj
+/F1 10 Tf
+1 0 0 1 54 121 Tm
+(*\(Agricultural partition = Revenue Tool\)*) Tj
+/F1 8 Tf
+1 0 0 1 54 100 Tm
+(--------------------------------------------------------------------------------------) Tj
+ET
+
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 3652 >>
+stream
+BT
+/F2 13 Tf
+1 0 0 1 54 730 Tm
+(9. Tool 4 -- Family Suit Writer) Tj
+/F1 10 Tf
+1 0 0 1 54 702 Tm
+(Law: Family Courts Act 1964 / Rules 1965) Tj
+/F1 10 Tf
+1 0 0 1 54 689 Tm
+(Extras: Schedule of Witnesses & Documents; interim maintenance/custody option;) Tj
+/F1 10 Tf
+1 0 0 1 54 676 Tm
+(reconciliation notes \(Sec. 10 & 12\)) Tj
+/F1 10 Tf
+1 0 0 1 54 663 Tm
+(Portal types: khula | dower-maintenance | dowry | custody | restitution | maintenance-only) Tj
+/F2 11 Tf
+1 0 0 1 54 638 Tm
+(Dropdown + template files) Tj
+/F1 10 Tf
+1 0 0 1 54 616 Tm
+(# | Suit | Status | File ) Tj
+/F1 10 Tf
+1 0 0 1 54 603 Tm
+(1 | Dissolution / Khula | LOCKED | templates/family/khula-dissolution.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 590 Tm
+(2 | Dower \(Mahr\) & past/future maintenance | LOCKED |) Tj
+/F1 10 Tf
+1 0 0 1 54 577 Tm
+(templates/family/dower-maintenance-recovery.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 564 Tm
+(3 | Dowry articles \(Jahiz\) & bridal gifts | LOCKED |) Tj
+/F1 10 Tf
+1 0 0 1 54 551 Tm
+(templates/family/dowry-articles-recovery.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 538 Tm
+(3b | Annexure-B itemized list | LOCKED | templates/family/dowry-annexure-b.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 525 Tm
+(4 | Custody u/s 25 Guardians & Wards Act | LOCKED |) Tj
+/F1 10 Tf
+1 0 0 1 54 512 Tm
+(templates/family/custody-guardians-wards-s25.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 499 Tm
+(5 | Restitution of conjugal rights | LOCKED |) Tj
+/F1 10 Tf
+1 0 0 1 54 486 Tm
+(templates/family/restitution-conjugal-rights.txt ) Tj
+/F1 10 Tf
+1 0 0 1 54 473 Tm
+(6 | Maintenance only \(UI writer\) | Implemented | lib/maintenance.ts \(+ Family/Maintenance) Tj
+/F1 10 Tf
+1 0 0 1 54 460 Tm
+(writers\) ) Tj
+/F2 11 Tf
+1 0 0 1 54 435 Tm
+(Shared form fields \(most family templates\)) Tj
+/F1 10 Tf
+1 0 0 1 54 413 Tm
+(court_location, plaintiff_name, plaintiff_relation, plaintiff_address, plaintiff_phone,) Tj
+/F1 10 Tf
+1 0 0 1 54 400 Tm
+(defendant_name, defendant_relation, defendant_address, defendant_phone,) Tj
+/F1 10 Tf
+1 0 0 1 54 387 Tm
+(lawyer_name \(default: Muhammad Tahir Khan Gurmani\), current_date) Tj
+/F2 11 Tf
+1 0 0 1 54 362 Tm
+(9.1 Khula -- extra fields) Tj
+/F1 10 Tf
+1 0 0 1 54 340 Tm
+(marriage_date, children_count, children_details, abuse_description,) Tj
+/F1 10 Tf
+1 0 0 1 54 327 Tm
+(abandonment_date, cause_of_action_date) Tj
+/F1 10 Tf
+1 0 0 1 54 314 Tm
+(Prayer: Decree for dissolution on basis of Khula) Tj
+/F2 11 Tf
+1 0 0 1 54 289 Tm
+(9.2 Dower & Maintenance -- extra fields) Tj
+/F1 10 Tf
+1 0 0 1 54 267 Tm
+(total_dower_amount, dower_type_e_g_prompt_or_deferred,) Tj
+/F1 10 Tf
+1 0 0 1 54 254 Tm
+(dower_paid_status_e_g_nothing_has_been_paid_or_gold_is_pending,) Tj
+/F1 10 Tf
+1 0 0 1 54 241 Tm
+(abandonment_date, maintenance_stopped_date,) Tj
+/F1 10 Tf
+1 0 0 1 54 228 Tm
+(defendant_occupation, defendant_income,) Tj
+/F1 10 Tf
+1 0 0 1 54 215 Tm
+(school_name, school_expense,) Tj
+/F1 10 Tf
+1 0 0 1 54 202 Tm
+(past_maintenance_start_date, past_maintenance_end_date, requested_past_rate,) Tj
+/F1 10 Tf
+1 0 0 1 54 189 Tm
+(requested_future_rate,) Tj
+/F1 10 Tf
+1 0 0 1 54 176 Tm
+(dower_description_e_g_5_tolas_gold_or_cash_amount,) Tj
+/F1 10 Tf
+1 0 0 1 54 163 Tm
+(total_past_amount, wife_future_rate, child_future_rate) Tj
+/F1 10 Tf
+1 0 0 1 54 150 Tm
+(Prayer: Outstanding Mahr + past maintenance + future maintenance \(10% annual increase\)) Tj
+/F2 11 Tf
+1 0 0 1 54 125 Tm
+(9.3 Dowry Articles -- extra fields) Tj
+/F1 10 Tf
+1 0 0 1 54 103 Tm
+(bari_gold_weight, abandonment_date, total_dowry_value, cause_of_action_date) Tj
+/F1 10 Tf
+1 0 0 1 54 90 Tm
+(Print: Main plaint + Annexure-B together) Tj
+ET
+
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 3553 >>
+stream
+BT
+/F2 11 Tf
+1 0 0 1 54 734 Tm
+(9.4 Annexure-B rows) Tj
+/F1 10 Tf
+1 0 0 1 54 712 Tm
+(Row | Description | Value ) Tj
+/F1 10 Tf
+1 0 0 1 54 699 Tm
+(1 Furniture | furniture_set_description | furniture_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 686 Tm
+(2 Electronics | fridge_or_electronics_desc | electronics_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 673 Tm
+(3 Washing machine | washing_machine_desc | washing_machine_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 660 Tm
+(4 Gold | gold_ornaments_weight_carat + qty | gold_market_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 647 Tm
+(5 Crockery | crockery_and_kitchenware | crockery_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 634 Tm
+(6 Bedding | bedding_quilts_and_linen + qty | bedding_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 621 Tm
+(7 Clothes | bridal_dresses_and_clothes + qty | clothes_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 608 Tm
+(8 Misc | miscellaneous_household_items | misc_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 595 Tm
+(Subtotal Jahez | -- | total_dowry_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 582 Tm
+(9 Bari gold | bari_gold_ornaments_desc + qty | bari_gold_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 569 Tm
+(10 Bari dresses | bari_dresses_and_apparel | bari_dresses_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 556 Tm
+(Subtotal Bari | -- | total_bari_value ) Tj
+/F1 10 Tf
+1 0 0 1 54 543 Tm
+(Grand total | -- | grand_total_combined_value ) Tj
+/F2 11 Tf
+1 0 0 1 54 518 Tm
+(9.5 Custody Sec. 25 -- extra fields) Tj
+/F1 10 Tf
+1 0 0 1 54 496 Tm
+(children_details, custody_loss_date, cause_of_action_date) Tj
+/F1 10 Tf
+1 0 0 1 54 483 Tm
+(Caption: Petitioner vs Respondent) Tj
+/F1 10 Tf
+1 0 0 1 54 470 Tm
+(Prayer: Permanent physical custody \(Hizanat\)) Tj
+/F2 11 Tf
+1 0 0 1 54 445 Tm
+(9.6 Restitution -- extra fields) Tj
+/F1 10 Tf
+1 0 0 1 54 423 Tm
+(marriage_date, departure_date, panchayat_date, cause_of_action_date) Tj
+/F1 10 Tf
+1 0 0 1 54 410 Tm
+(Prayer: Return to matrimonial home as lawful wife) Tj
+/F1 8 Tf
+1 0 0 1 54 389 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 359 Tm
+(10. Tool 5 -- Revenue Applications Writer) Tj
+/F1 10 Tf
+1 0 0 1 54 331 Tm
+(Law: West Pakistan Land Revenue Act 1967) Tj
+/F1 10 Tf
+1 0 0 1 54 318 Tm
+(Attachments checklist: Fard Malkiyat / Jamabandi | Khasra Girdawari | Aksi Shajra) Tj
+/F1 10 Tf
+1 0 0 1 54 297 Tm
+(Process note: Application ? Collector report ? field verification \(Patwari/Kanungo\) ? spot) Tj
+/F1 10 Tf
+1 0 0 1 54 284 Tm
+(inspection ? orders ? appeal/revision \(Sec. 161-164\)) Tj
+/F1 10 Tf
+1 0 0 1 54 263 Tm
+(Dropdown:) Tj
+/F1 10 Tf
+1 0 0 1 54 242 Tm
+(1. Correction of revenue record -- Sec. 45 / 53) Tj
+/F1 10 Tf
+1 0 0 1 54 229 Tm
+(2. Demarcation \(Hadd Bandi\) -- Sec. 117) Tj
+/F1 10 Tf
+1 0 0 1 54 216 Tm
+(3. Ejectment / possession -- Sec. 85 / 122) Tj
+/F1 10 Tf
+1 0 0 1 54 203 Tm
+(4. Mutation disputes \(Intiqal\) -- Sec. 42) Tj
+/F1 10 Tf
+1 0 0 1 54 190 Tm
+(5. Partition of agricultural land -- Sec. 135) Tj
+/F1 10 Tf
+1 0 0 1 54 177 Tm
+(- Naksha Alif ? Naksha Be \(Tareeqa-e-Takseem\) ? Naksha Jeem \(Sanad-e-Takseem\)) Tj
+/F1 10 Tf
+1 0 0 1 54 164 Tm
+(- Instrument of Partition Sec. 145) Tj
+/F1 10 Tf
+1 0 0 1 54 151 Tm
+(- If title dispute \(Sec. 141\): stay; refer to Civil Court) Tj
+/F1 8 Tf
+1 0 0 1 54 130 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 100 Tm
+(11. Tool 6 -- FBR / SECP Practice Hub) Tj
+/F1 10 Tf
+1 0 0 1 54 72 Tm
+(Guides only -- no portal passwords or filing from this site.) Tj
+ET
+
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 3324 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 54 738 Tm
+(A. FBR IRIS 2.0 \(iris.fbr.gov.pk\)) Tj
+/F1 10 Tf
+1 0 0 1 54 725 Tm
+(Maloomat / SSO | ITR Sec. 114 | Wealth Sec. 116 | Sales Tax / IMS | PSID / ATL | Exemption) Tj
+/F1 10 Tf
+1 0 0 1 54 712 Tm
+(Sec. 153/159) Tj
+/F1 10 Tf
+1 0 0 1 54 691 Tm
+(B. SECP eZfile \(eservices.secp.gov.pk\)) Tj
+/F1 10 Tf
+1 0 0 1 54 678 Tm
+(User registration | Name reservation | MoA/AoA | Forms 1, 21, 29 | NTN/EOBI/PESSI note) Tj
+/F1 10 Tf
+1 0 0 1 54 657 Tm
+(C. Partnership firm) Tj
+/F1 10 Tf
+1 0 0 1 54 644 Tm
+(Deed ? Form A/B ? Form C ? FBR AOP via IRIS) Tj
+/F1 10 Tf
+1 0 0 1 54 623 Tm
+(D. Research links) Tj
+/F1 10 Tf
+1 0 0 1 54 602 Tm
+(Scope | Portal ) Tj
+/F1 10 Tf
+1 0 0 1 54 589 Tm
+(Income Tax / SROs | fbr.gov.pk ) Tj
+/F1 10 Tf
+1 0 0 1 54 576 Tm
+(Sales Tax / STGOs | fbr.gov.pk ) Tj
+/F1 10 Tf
+1 0 0 1 54 563 Tm
+(IRIS manuals / SOPs | e.fbr.gov.pk ) Tj
+/F1 10 Tf
+1 0 0 1 54 550 Tm
+(Companies Act / Regulations | secp.gov.pk ) Tj
+/F1 10 Tf
+1 0 0 1 54 537 Tm
+(Official Gazette | pcp.gov.pk ) Tj
+/F1 8 Tf
+1 0 0 1 54 516 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 486 Tm
+(12. Design direction) Tj
+/F1 10 Tf
+1 0 0 1 54 458 Tm
+(- Professional Pakistan district-court firm look) Tj
+/F1 10 Tf
+1 0 0 1 54 445 Tm
+(- Deep navy + warm paper-tone petition areas) Tj
+/F1 10 Tf
+1 0 0 1 54 432 Tm
+(- Serif court headings) Tj
+/F1 10 Tf
+1 0 0 1 54 419 Tm
+(- Brand-first hero \(firm / advocate name dominant\)) Tj
+/F1 10 Tf
+1 0 0 1 54 406 Tm
+(- Tools hub + drafting portal grouped: Criminal | Family | Civil-Revenue | Tax-Corporate) Tj
+/F1 10 Tf
+1 0 0 1 54 393 Tm
+(- First viewport: brand, one headline, one supporting line, CTA group, one dominant visual --) Tj
+/F1 10 Tf
+1 0 0 1 54 380 Tm
+(not a dashboard of cards) Tj
+/F1 8 Tf
+1 0 0 1 54 359 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 329 Tm
+(13. Implementation phases \(historical ? done\)) Tj
+/F1 10 Tf
+1 0 0 1 54 301 Tm
+(1. Scaffold + firm contact config -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 288 Tm
+(2. Marketing pages + lead capture -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 275 Tm
+(3. Admin \(login, leads, usage, CRUD\) -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 262 Tm
+(4. Criminal Trial Referencer + Criminal Applications Writer \(expanded to 25\) -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 249 Tm
+(5. Civil Suit Writer -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 236 Tm
+(6. Family Suit Writer \(5 + Annexure-B + maintenance-only\) -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 223 Tm
+(7. Revenue Applications Writer -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 210 Tm
+(8. FBR / SECP Practice Hub -- done) Tj
+/F1 10 Tf
+1 0 0 1 54 197 Tm
+(9. Polish \(portal shell, module forms, .docx API, WhatsApp links\) -- in place / ongoing) Tj
+/F1 8 Tf
+1 0 0 1 54 176 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 146 Tm
+(14. Out of scope \(still\)) Tj
+/F1 10 Tf
+1 0 0 1 54 118 Tm
+(- Login or filing on IRIS / eZfile from this website) Tj
+/F1 10 Tf
+1 0 0 1 54 105 Tm
+(- Online payments) Tj
+/F1 10 Tf
+1 0 0 1 54 92 Tm
+(- Client case file management) Tj
+/F1 10 Tf
+1 0 0 1 54 79 Tm
+(- Full Urdu RTL petitions) Tj
+ET
+
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Length 2037 >>
+stream
+BT
+/F1 10 Tf
+1 0 0 1 54 738 Tm
+(- AI free-form drafting) Tj
+/F1 10 Tf
+1 0 0 1 54 725 Tm
+(- Multi-advocate accounts) Tj
+/F1 10 Tf
+1 0 0 1 54 712 Tm
+(- Auto court-fee / stamp-duty calculation) Tj
+/F1 8 Tf
+1 0 0 1 54 691 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 661 Tm
+(15. Template inventory \(on disk\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 633 Tm
+(templates/family/) Tj
+/F1 8.5 Tf
+1 0 0 1 54 622 Tm
+(khula-dissolution.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 611 Tm
+(dower-maintenance-recovery.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 600 Tm
+(dowry-articles-recovery.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 589 Tm
+(dowry-annexure-b.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 578 Tm
+(custody-guardians-wards-s25.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 567 Tm
+(restitution-conjugal-rights.txt) Tj
+/F1 8.5 Tf
+1 0 0 1 54 548 Tm
+(templates/criminal/) Tj
+/F1 8.5 Tf
+1 0 0 1 54 537 Tm
+(*.txt \(module text templates\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 526 Tm
+(*.docx \(some dual copies\)) Tj
+/F1 8.5 Tf
+1 0 0 1 54 515 Tm
+(docx/ \(paired Word files per module\)) Tj
+/F1 10 Tf
+1 0 0 1 54 496 Tm
+(Key libs: lib/criminal.ts, lib/criminalModuleFields.ts, lib/criminal-docx.ts, lib/family.ts,) Tj
+/F1 10 Tf
+1 0 0 1 54 483 Tm
+(lib/maintenance.ts, lib/civil.ts, lib/revenue.ts, lib/writerClient.ts, lib/writerFormMap.ts,) Tj
+/F1 10 Tf
+1 0 0 1 54 470 Tm
+(lib/auth.ts, lib/firm.ts) Tj
+/F1 8 Tf
+1 0 0 1 54 449 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F2 13 Tf
+1 0 0 1 54 419 Tm
+(16. Saved deliverable) Tj
+/F1 10 Tf
+1 0 0 1 54 391 Tm
+(- Markdown master: WARIS-LAW-FIRM-COMPLETE-PLAN.md) Tj
+/F1 10 Tf
+1 0 0 1 54 378 Tm
+(- PDF export: Waris-Law-Firm-Website-Plan.pdf \(project root\)) Tj
+/F1 8 Tf
+1 0 0 1 54 357 Tm
+(--------------------------------------------------------------------------------------) Tj
+/F1 10 Tf
+1 0 0 1 54 335 Tm
+(*End of Waris Law Firm Complete Project Plan \(refreshed to implemented reality\)*) Tj
+ET
+
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 21 0 R >>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000176 00000 n 
+0000000273 00000 n 
+0000000375 00000 n 
+0000004413 00000 n 
+0000004549 00000 n 
+0000008488 00000 n 
+0000008624 00000 n 
+0000012465 00000 n 
+0000012602 00000 n 
+0000016918 00000 n 
+0000017056 00000 n 
+0000020513 00000 n 
+0000020651 00000 n 
+0000024356 00000 n 
+0000024494 00000 n 
+0000028100 00000 n 
+0000028238 00000 n 
+0000031615 00000 n 
+0000031753 00000 n 
+0000033843 00000 n 
+trailer
+<< /Size 23 /Root 1 0 R >>
+startxref
+33981
+%%EOF

@@ -1,0 +1,28 @@
+IN THE COURT OF THE HONORABLE {{court_tier_name}}, {{court_city}}
+
+State VERSUS {{accused_name}}
+FIR No. {{fir_number}}, Police Station: {{police_station}}
+
+APPLICATION FOR EXEMPTION FROM PERSONAL APPEARANCE AND ADJOURNMENT OF THE CASE
+
+Respectfully Sheweth:
+
+1. That the above-titled trial case is fixed for hearing before this Honorable Court today.
+
+2. That the applicant / accused is unable to appear due to {{sudden_emergency_reason}}.
+
+3. That the absence is unintentional and the applicant undertakes that the same shall not delay the proceedings.
+
+PRAYER
+
+It is, therefore, most respectfully prayed that this Honorable Court may graciously be pleased to:
+
+*   Exempt the personal appearance of the applicant / accused for today.
+*   Mark the presence of the applicant through counsel.
+*   Adjourn the case to a future date convenient to this Honorable Court.
+*   Any other relief which this Honorable Court deems fit and proper may also be awarded.
+
+APPLICANT
+Through Counsel:
+
+{{legal_counsel_footer}}

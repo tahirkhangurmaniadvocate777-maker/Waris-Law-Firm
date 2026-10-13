@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waris Law Firm - Advanced Research & Drafting Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+        .main-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .panel-box {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #1e3a8a;
+            margin-top: 0;
+            border-bottom: 3px solid #d97706;
+            padding-bottom: 10px;
+        }
+        .input-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 200px;
+            font-family: 'Courier New', Courier, monospace;
+            resize: vertical;
+        }
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        button:hover { background-color: #172554; }
+        .accent-btn { background-color: #d97706; }
+        .accent-btn:hover { background-color: #b45309; }
+        .law-card {
+            background: #f8fafc;
+            border-left: 5px solid #d97706;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        .law-title { font-weight: bold; color: #1e293b; }
+        .law-ratio { font-size: 14px; color: #475569; margin-top: 6px; }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <!-- MODULE 1: Live Precedent Search Engine -->
+    <div class="panel-box">
+        <h2>1. Statutory & Precedent Search</h2>
+        <p style="color: #64748b; margin: 5px 0 15px 0;">Search the internal database using citations or legal categories.</p>
+        <div class="input-row">
+            <input type="text" id="engineQuery" placeholder="Type keyword (e.g. 2025 SCMR, Condonation, CrPC)...">
+            <button onclick="runDatabaseSearch()">Search Records</button>
+        </div>
+        <div id="engineOutput"></div>
+    </div>
+
+    <!-- MODULE 2: Dynamic Dropdown Legal Draft Builder -->
+    <div class="panel-box">
+        <h2>2. Application Drafter & Precedent Injector</h2>
+        <p style="color: #64748b; margin: 5px 0 15px 0;">Select an authoritative case law below to insert its ratio decidendi directly into your working legal draft text area.</p>
+        
+        <label style="font-weight: bold; color: #334155;" for="precedentDropdown">Select Precedent to Insert:</label>
+        <div class="input-row" style="margin-bottom: 20px;">
+            <select id="precedentDropdown">
+                <option value="">-- Loading precedents from Python server... --</option>
+            </select>
+            <button class="accent-btn" onclick="injectPrecedentText()">Inject into Draft</button>
+        </div>
+
+        <label style="font-weight: bold; color: #334155;" for="draftWorkspace">Application Draft Workspace:</label>
+        <textarea id="draftWorkspace" placeholder="In the Court of... Additional Evidence Application..."></textarea>
+        
+        <div class="input-row" style="justify-content: flex-end;">
+            <button onclick="copyWorkspaceToClipboard()">Copy Draft Text</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Global runtime cache for dropdown items
+let loadedLibraryData = [];
+
+// Initialize data bindings on load
+window.addEventListener('DOMContentLoaded', () => {
+    fetchDropdownItems();
+});
+
+// Fetch full library to populate the dynamic dropdown menu
+async function fetchDropdownItems() {
+    try {
+        const response = await fetch('http://127.0.0.1:8000');
+        const data = await response.json();
+        loadedLibraryData = data.library;
+        
+        const dropdown = document.getElementById('precedentDropdown');
+        dropdown.innerHTML = '<option value="">-- Choose a binding judgment / clause --</option>';
+        
+        loadedLibraryData.forEach(item => {
+            const opt = document.createElement('option');
+            opt.value = item.id;
+            opt.innerText = `${item.citation} (${item.category})`;
+            dropdown.appendChild(opt);
+        });
+    } catch (err) {
+        console.error("Dropdown load failed:", err);
+    }
+}
+
+// Perform structural textual search execution
+async function runDatabaseSearch() {
+    const query = document.getElementById('engineQuery').value;
+    const output = document.getElementById('engineOutput');
+    output.innerHTML = "";
+
+    if(!query.trim()) return;
+
+    try {
+        const response = await fetch('http://127.0.0.1:8000', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: query })
+        });
+        const data = await response.json();
+        
+        if(data.results.length === 0) {
+            output.innerHTML = "<p style='color:#ef4444; margin-top:15px;'>No matching judgments discovered.</p>";
+            return;
+        }
+
+        data.results.forEach(law => {
+            const el = document.createElement('div');
+            el.className = 'law-card';
+            el.innerHTML = `<div class='law-title'>${law.title} [${law.citation}]</div><div class='law-ratio'>${law.ratio}</div>`;
+            output.appendChild(el);
+        });
+    } catch(err) {
+        alert("Server unreachable.");
+    }
+}
+
+// Inject selected dropdown precedent into draft workspace text block
+function injectPrecedentText() {
+    const dropdown = document.getElementById('precedentDropdown');
+    const workspace = document.getElementById('draftWorkspace');
+    const selectedId = dropdown.value;
+
+    if(!selectedId) {
+        alert("Please pick a judgment from the dropdown menu first.");
+        return;
+    }
+
+    const matchedItem = loadedLibraryData.find(item => item.id === selectedId);
+    if(matchedItem) {
+        const textToInject = `\nThat reliance is confidently placed on the authoritative rule of the Apex Judicial Forum enunciated in case citation [${matchedItem.citation}], wherein it was structurally resolved that: "${matchedItem.ratio}"\n`;
+        workspace.value += textToInject;
+    }
+}
+
+// Copy workspace text block straight to local operating clipboard
+function copyWorkspaceToClipboard() {
+    const workspace = document.getElementById('draftWorkspace');
+    if(!workspace.value.trim()) return;
+    
+    workspace.select();
+    document.execCommand('copy');
+    alert("Draft text successfully copied to clipboard!");
+}
+</script>
+
+</body>
+</html>

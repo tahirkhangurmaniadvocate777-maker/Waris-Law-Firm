@@ -1,0 +1,61 @@
+IN THE COURT OF THE LEARNED FAMILY JUDGE, {{court_location}}
+
+Family Suit No. ___________ / 2026
+
+{{plaintiff_name}} {{plaintiff_relation}}
+Resident of: {{plaintiff_address}}
+Cell No: {{plaintiff_phone}}
+                                                        ... PLAINTIFF
+                                VERSUS
+
+{{defendant_name}} {{defendant_relation}}
+Resident of: {{defendant_address}}
+Cell No: {{defendant_phone}}
+                                                        ... DEFENDANT
+
+SUIT FOR THE RECOVERY OF DOWER (MAHR) AND PAST & FUTURE MAINTENANCE FOR THE PLAINTIFF AND MINORS
+
+
+RESPECTFULLY SHEWETH:
+
+1. That the marriage between the Plaintiff and the Defendant was solemnized on {{marriage_date}} according to Muslim Rites and Shariah laws against a fixed dower amount of {{total_dower_amount}}. A copy of the Nikahnama is attached herewith.
+
+2. That out of the wedlock, {{children_count}} child/children were born, namely {{children_details}}.
+
+3. That as per Column No. 13 to 16 of the Nikahnama, the dower was fixed as {{dower_type_e_g_prompt_or_deferred}} out of which {{dower_paid_status_e_g_nothing_has_been_paid_or_gold_is_pending}}. The Defendant explicitly promised to hand over the dower upon demand but has completely failed to clear his legal obligation.
+
+4. That the behavior of the Defendant towards the Plaintiff became cruel and abusive soon after the marriage. Ultimately, on {{abandonment_date}}, the Defendant forcibly ousted the Plaintiff along with the minor children from the matrimonial home, completely turning his back on his familial duties.
+
+5. That the Defendant has failed to maintain the Plaintiff or provide any financial or daily sustenance for the minor children since {{maintenance_stopped_date}}. The Plaintiff has no independent source of income and is living at the mercy of her parents, whereas the Defendant is a man of status, running a business of {{defendant_occupation}} / earning a monthly salary of PKR {{defendant_income}}.
+
+6. That the minor children are studying at {{school_name}} incurring monthly expenses of PKR {{school_expense}}, which is the absolute legal responsibility of the Defendant to pay.
+
+7. That the Plaintiff claims past maintenance for herself and the minors from {{past_maintenance_start_date}} to {{past_maintenance_end_date}} at the rate of PKR {{requested_past_rate}} per month, and future maintenance at the rate of PKR {{requested_future_rate}} per month with a 10% annual increase.
+
+8. That the cause of action arose on {{cause_of_action_date}} when the final demand for Dower and Maintenance was flatly refused by the Defendant, within the territorial jurisdiction of this Honorable Court where the Plaintiff currently resides.
+
+9. That the proper court fee has been affixed on the plaint.
+
+PRAYER:
+It is, therefore, respectfully prayed that this Honorable Court may graciously pass a decree in favor of the Plaintiff against the Defendant for:
+
+- The recovery of outstanding Dower (Mahr) as per the Nikahnama, comprising {{dower_description_e_g_5_tolas_gold_or_cash_amount}}.
+
+- Past maintenance for the Plaintiff and minor children totaling PKR {{total_past_amount}} for the period of non-payment.
+
+- Future monthly maintenance for the Plaintiff at the rate of PKR {{wife_future_rate}} and for each minor child at PKR {{child_future_rate}} per month with a 10% annual increment until their legal entitlement.
+
+- Any other relief which this Honorable Court deems fit and proper under the circumstances may also be awarded.
+
+
+                                                                _________________
+                                                                    PLAINTIFF
+Through:
+{{lawyer_name}}
+Advocate
+
+VERIFICATION:
+Verified on Oath at {{court_location}} on this {{current_date}}, that the contents of paragraphs 1 to 9 are true and correct to the best of my knowledge and belief, and the rest are based on information received.
+
+                                                                _________________
+                                                                    PLAINTIFF
