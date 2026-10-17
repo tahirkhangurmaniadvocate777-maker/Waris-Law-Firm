@@ -1,5 +1,10 @@
 import { disclaimer, firm } from "@/lib/firm";
 import {
+  dirAttr,
+  petitionChrome,
+  type DraftLanguage,
+} from "@/lib/language";
+import {
   formatPldGroundsParagraphs,
   normalizePldCitations,
   type PldCitations,
@@ -19,6 +24,7 @@ export type CourtPleadingPreviewProps = {
   pld_citations?: PldCitations;
   /** Alias accepted by some writers. */
   caseLawCitations?: string[];
+  language?: DraftLanguage;
 };
 
 const DEFAULT_FIRM_ADDRESS = [
@@ -39,7 +45,9 @@ export default function CourtPleadingPreview({
   firmAddress = DEFAULT_FIRM_ADDRESS,
   pld_citations,
   caseLawCitations,
+  language = "en",
 }: CourtPleadingPreviewProps) {
+  const chrome = petitionChrome(language);
   const citations = [
     ...normalizePldCitations(pld_citations),
     ...(caseLawCitations ?? []).map((c) => c.trim()).filter(Boolean),
@@ -49,6 +57,8 @@ export default function CourtPleadingPreview({
   return (
     <article
       id="petition-print"
+      dir={dirAttr(language)}
+      lang={language === "ur" ? "ur" : "en"}
       className="court-pleading-sheet mx-auto min-h-[11in] max-w-[8.5in] border border-stone-300 bg-amber-50 font-serif text-justify text-sm leading-relaxed text-stone-900 shadow-inner print:border-0 print:bg-white print:shadow-none"
     >
       {/* 2-inch top clearance for court stamps / fee stamps */}
@@ -63,7 +73,7 @@ export default function CourtPleadingPreview({
 
         {grounds.length > 0 ? (
           <section className="mt-8">
-            <p className="mb-3 font-bold tracking-wide uppercase">Grounds</p>
+            <p className="mb-3 font-bold tracking-wide uppercase">{chrome.grounds}</p>
             {grounds.map((para) => (
               <p key={para} className="mb-2 text-justify leading-[1.65]">
                 {para}
@@ -72,9 +82,9 @@ export default function CourtPleadingPreview({
           </section>
         ) : null}
 
-        <div className="mt-12 text-right text-xs">
+        <div className={`mt-12 text-xs ${language === "ur" ? "text-left" : "text-right"}`}>
           <p className="font-bold">
-            Through Counsel: {lawyerName}, {firm.designation}
+            {chrome.throughCounsel} {lawyerName}, {firm.designation}
           </p>
           <p className="mt-4 inline-block min-w-[220px] border-t border-stone-400 pt-1 font-sans text-[10px] font-semibold tracking-wide text-stone-800 uppercase">
             {lawyerName}

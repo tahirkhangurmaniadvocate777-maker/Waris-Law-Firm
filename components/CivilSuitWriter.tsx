@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import CourtPleadingPreview from "@/components/CourtPleadingPreview";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { TemporaryInjunctionForm } from "@/components/TemporaryInjunctionForm";
 import {
   buildCivilPlaintDraft,
@@ -16,8 +17,10 @@ import {
 } from "@/lib/civilOptions";
 import { declaratoryDefaultAuthorityStatus } from "@/lib/civilPrecedents";
 import { disclaimer, firm } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import { ensureLeadThenLog } from "@/lib/logToolUsage";
 import { Field, Section, ToolIntro, inputClass } from "@/lib/ui";
+import { buildCivilPlaintDraftUrdu } from "@/lib/urduDraft";
 
 const PLAINT_IDS = new Set(CIVIL_SUIT_OPTIONS.map((o) => o.id));
 
@@ -51,6 +54,7 @@ function CivilSuitWriterInner() {
   const [courtFeePaid, setCourtFeePaid] = useState("15");
   const [factsParagraphs, setFactsParagraphs] = useState<string[]>([]);
   const [newPara, setNewPara] = useState("");
+  const [language, setLanguage] = useState<DraftLanguage>("en");
 
   useEffect(() => {
     if (!typeParam) return;
@@ -103,8 +107,11 @@ function CivilSuitWriterInner() {
   );
 
   const liveDraftText = useMemo(
-    () => buildCivilPlaintDraft(plaintData),
-    [plaintData],
+    () =>
+      language === "ur"
+        ? buildCivilPlaintDraftUrdu(plaintData)
+        : buildCivilPlaintDraft(plaintData),
+    [plaintData, language],
   );
 
   async function handlePrintPlaint(e: React.FormEvent) {
@@ -153,22 +160,25 @@ function CivilSuitWriterInner() {
 
       <div className="no-print mt-6">
         <Section title="Document type">
-          <Field label="Select suit / application">
-            <select
-              value={suitTypeId}
-              onChange={(e) => changeSuitType(e.target.value as CivilWriterMode)}
-              className={inputClass}
-            >
-              {CIVIL_SUIT_OPTIONS.map((opt) => (
-                <option key={opt.id} value={opt.id}>
-                  {opt.label}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Select suit / application">
+              <select
+                value={suitTypeId}
+                onChange={(e) => changeSuitType(e.target.value as CivilWriterMode)}
+                className={inputClass}
+              >
+                {CIVIL_SUIT_OPTIONS.map((opt) => (
+                  <option key={opt.id} value={opt.id}>
+                    {opt.label}
+                  </option>
+                ))}
+                <option value={CIVIL_TEMP_INJUNCTION_MODE}>
+                  Application — Temporary Injunction (Order 39 Rules 1 &amp; 2 CPC)
                 </option>
-              ))}
-              <option value={CIVIL_TEMP_INJUNCTION_MODE}>
-                Application — Temporary Injunction (Order 39 Rules 1 &amp; 2 CPC)
-              </option>
-            </select>
-          </Field>
+              </select>
+            </Field>
+            <LanguageSelect value={language} onChange={setLanguage} />
+          </div>
           {suitTypeId === "declaratory" ? (
             <p className="rounded border border-line bg-paper/50 px-3 py-2 text-xs leading-5 text-ink/70">
               {declaratoryDefaultAuthorityStatus()}. Sec. 42 default grounds are
@@ -180,7 +190,7 @@ function CivilSuitWriterInner() {
 
       {isTempMode(suitTypeId) ? (
         <div className="mt-6">
-          <TemporaryInjunctionForm embedded />
+          <TemporaryInjunctionForm embedded language={language} />
         </div>
       ) : (
         <div className="screen-grid mt-6 flex max-h-[90vh] flex-col gap-6 overflow-hidden lg:flex-row">
@@ -365,12 +375,16 @@ function CivilSuitWriterInner() {
             </p>
             <CourtPleadingPreview
               title={
-                CIVIL_SUIT_OPTIONS.find((o) => o.id === suitTypeId)?.label.toUpperCase() ??
-                "CIVIL PLAINT"
+                language === "ur"
+                  ? (CIVIL_SUIT_OPTIONS.find((o) => o.id === suitTypeId)?.label ??
+                    "دیوانی مقدمہ")
+                  : (CIVIL_SUIT_OPTIONS.find((o) => o.id === suitTypeId)?.label.toUpperCase() ??
+                    "CIVIL PLAINT")
               }
               content={liveDraftText}
               lawyerName={firm.advocate}
               firmAddress={firm.officeAddress}
+              language={language}
             />
           </div>
         </div>

@@ -1,0 +1,161 @@
+================================================================================
+WARIS LAW FIRM — COMPLETE PROJECT PLAN (TEXT)
+Website + Legal Automation Tools
+================================================================================
+Document status : Completed project — pure implemented shape
+Date            : October 2026
+Advocate        : Muhammad Tahir Khan Gurmani, Advocate High Court
+Firm            : Waris Law Firm / Waris Law Office
+Office          : Office No. 40, Ground Floor, Quaid-E-Azam Block,
+                  District Courts, Dera Ghazi Khan
+Phones          : 0334-7744739 | 0300-1652953
+Emails          : warislawofficedbadgk@gmail.com
+                  muhammadtahirkhangurmaniadvocatedbadgk@outlook.com
+                  tahirkhangurmaniadvocate777@gmail.com
+Practice areas  : Criminal | Civil | Revenue | Family | FBR/Tax & Corporate | Writ
+
+--------------------------------------------------------------------------------
+1. GOAL
+--------------------------------------------------------------------------------
+Public firm website plus freely usable drafting tools for criminal, civil,
+family, and revenue matters, plus an FBR / SECP practice guide hub.
+
+- Lead capture (name, phone, email) before tool use and on contact form
+- Live HTML petition preview + browser Print / Save as PDF
+- Criminal modules also download court-style .docx
+- Tax/corporate = checklists + official links only (no IRIS/eZfile login)
+- Disclaimer: assistance only; filing remains advocate/user responsibility
+
+--------------------------------------------------------------------------------
+2. TECH STACK
+--------------------------------------------------------------------------------
+Frontend   : Next.js 15 (App Router) + React 19 + TypeScript + Tailwind CSS 4
+Database   : SQLite via Prisma (leads, usage logs, referencer)
+Admin      : Password-protected /admin (session cookie)
+Criminal   : HTML preview + docx package → .docx
+Print      : Browser Print / Save as PDF
+Container  : Containerfile (Red Hat UBI Node 20) for OpenShift/Docker
+
+Env:
+  DATABASE_URL     = file:./dev.db  (or production equivalent)
+  ADMIN_PASSWORD   = set in .env (default fallback waris-admin-2026 for local)
+
+--------------------------------------------------------------------------------
+3. SITE MAP
+--------------------------------------------------------------------------------
+Home → Practice Areas | About | Contact | Tools Hub
+Tools Hub → Drafting Portal →
+  Criminal Trial Referencer
+  Criminal Applications Writer (?type=…) → Preview + Generate .docx
+  Civil Suit Writer → Printable draft
+  Family Suit Writer (?type=…) → Printable draft (+ Annexure-B for dowry)
+  Revenue Applications Writer → Printable draft
+  FBR / SECP Practice Hub → Checklists + links
+  Case Preparation Analyzer (advisory heuristic)
+Public use → Lead capture → Admin database
+
+Routes:
+  /                                          Brand-forward home
+  /practice-areas                            Practice areas list
+  /practice-areas/[slug]                     Area detail
+  /about                                     Advocate profile
+  /contact                                   Phones, emails, form, chambers map
+  /tools                                     Drafting portal hub + search
+  /tools/criminal-trial-referencer
+  /tools/criminal-applications-writer
+  /tools/civil-suit-writer
+  /tools/family-suit-writer
+  /tools/revenue-applications-writer
+  /tools/fbr-secp-practice
+  /tools/case-prep
+  /admin                                     Leads, usage, referencer, vault
+
+APIs:
+  POST /api/leads
+  POST /api/leads/capture
+  POST /api/usage
+  POST /api/admin/login
+  POST /api/admin/logout
+  *    /api/admin/referencer
+  GET  /api/referencer
+  POST /api/v1/writer/generate
+  POST /api/v1/automate/civil
+  POST /api/v1/automate/extended-criminal
+  POST /api/v1/vault/upload-evidence
+  POST /api/case-prep/analyze
+
+--------------------------------------------------------------------------------
+4. TOOLS (COMPLETED)
+--------------------------------------------------------------------------------
+4.1 Criminal Trial Referencer
+    Searchable stages / sections / checklists; admin CRUD
+
+4.2 Criminal Applications Writer (25+ modules)
+    Bail 497/498, 249-A, 265-K, 22-A/B FIR direction, 516-A Superdari,
+    491-552, NBW, appeals, revisions, ID parade, habeas, and more
+    Live preview + Generate .docx
+
+4.3 Civil Suit Writer (CPC / Specific Relief)
+    Declaration, injunction, specific performance, possession, cancellation,
+    damages, urban partition, temporary injunction O39; print canvas
+
+4.4 Family Suit Writer (Family Courts Act)
+    Khula, dower & maintenance, dowry + Annexure-B, custody, restitution,
+    maintenance-only; locked templates under templates/family/
+
+4.5 Revenue Applications Writer (Land Revenue Act 1967)
+    Record correction, demarcation, ejectment, mutation, agri partition
+
+4.6 FBR / SECP Practice Hub
+    IRIS / eZfile checklists + research portal links (no passwords stored)
+
+--------------------------------------------------------------------------------
+5. LEAD / ADMINISTRATION
+--------------------------------------------------------------------------------
+Capture : Full name, phone, email (+ optional city / matter)
+When    : Contact form + before first tool use
+Log     : Timestamp, tool used, draft/application type
+Access  : /admin only (password session)
+
+--------------------------------------------------------------------------------
+6. DESIGN
+--------------------------------------------------------------------------------
+- Brand-first home (firm + advocate name dominant)
+- Dark slate / amber automation look on home; navy/brass marketing chrome
+- Petition sheets: Times / court pleading styles for print
+- Drafting portal sidebar with law-field search
+
+--------------------------------------------------------------------------------
+7. HOW TO RUN (LOCAL)
+--------------------------------------------------------------------------------
+  npm install
+  npx prisma db push
+  npm run db:seed          (optional referencer seed)
+  npm run dev              → http://localhost:3000
+  npm run build && npm start   (production mode)
+
+Docker / OpenShift:
+  Containerfile at project root (port 3000)
+
+--------------------------------------------------------------------------------
+8. OUT OF SCOPE (INTENTIONALLY)
+--------------------------------------------------------------------------------
+- IRIS / eZfile login or filing from this site
+- Online payments
+- Full client case file CMS
+- Full Urdu RTL petitions
+- AI free-form drafting
+- Multi-advocate accounts
+- Auto court-fee / stamp-duty calculation
+
+--------------------------------------------------------------------------------
+9. SISTER DOCUMENTS
+--------------------------------------------------------------------------------
+  docs/WARIS-LAW-FIRM-PROJECT-PLAN.txt          ← this text plan
+  docs/WARIS-LAW-FIRM-CODE-ARCHITECTURE.md      ← coded architecture
+  docs/Waris-Law-Firm-Completed-Project.pdf     ← PDF pack
+  WARIS-LAW-FIRM-COMPLETE-PLAN.md               ← markdown master (root)
+
+================================================================================
+End of Waris Law Firm Complete Project Plan (text)
+================================================================================
