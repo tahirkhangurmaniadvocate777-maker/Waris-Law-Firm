@@ -4,6 +4,7 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { CriminalAffidavitPreview } from "@/components/CriminalAffidavitPreview";
 import { CriminalModuleForm } from "@/components/CriminalModuleForm";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { TextPetition } from "@/components/TextPetition";
 import {
   COURT_DEFAULTS,
@@ -14,7 +15,9 @@ import {
   type CriminalForm,
 } from "@/lib/criminal";
 import { disclaimer } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import { Field, inputClass } from "@/lib/ui";
+import { criminalDraftInLanguage } from "@/lib/urduDraft";
 import { getExtendedModuleByWriterType } from "@/lib/config/automationRegistry";
 import { criminalFormToExtendedFormData } from "@/lib/extendedCriminalFormData";
 import { criminalFormToFields } from "@/lib/writerFormMap";
@@ -44,8 +47,12 @@ function CriminalApplicationsWriterInner() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [language, setLanguage] = useState<DraftLanguage>("en");
 
-  const draft = useMemo(() => buildCriminalDraft(form), [form]);
+  const draft = useMemo(
+    () => criminalDraftInLanguage(buildCriminalDraft(form), form, language),
+    [form, language],
+  );
   const { affidavit, ...petition } = draft;
 
   useEffect(() => {
@@ -120,20 +127,23 @@ function CriminalApplicationsWriterInner() {
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-6 md:px-6 md:py-8">
-      <div className="no-print mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <Field label="Application type">
-          <select
-            className={inputClass}
-            value={form.appType}
-            onChange={(e) => setAppType(e.target.value as CriminalForm["appType"])}
-          >
-            {criminalAppOptions.map((opt) => (
-              <option key={opt.id} value={opt.id}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
-        </Field>
+      <div className="no-print mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="grid w-full max-w-xl gap-3 sm:grid-cols-2">
+          <Field label="Application type">
+            <select
+              className={inputClass}
+              value={form.appType}
+              onChange={(e) => setAppType(e.target.value as CriminalForm["appType"])}
+            >
+              {criminalAppOptions.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <LanguageSelect value={language} onChange={setLanguage} />
+        </div>
         <p className="max-w-md text-xs text-slate-500 sm:text-right">{disclaimer}</p>
       </div>
 
@@ -151,7 +161,7 @@ function CriminalApplicationsWriterInner() {
           />
         </div>
         <div className="print-stage lg:sticky lg:top-6">
-          <TextPetition {...petition} />
+          <TextPetition {...petition} language={language} />
           {affidavit ? <CriminalAffidavitPreview affidavit={affidavit} /> : null}
         </div>
       </div>

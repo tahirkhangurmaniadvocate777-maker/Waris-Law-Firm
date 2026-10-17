@@ -3,9 +3,12 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import CourtPleadingPreview from "@/components/CourtPleadingPreview";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { RevenuePartitionForm } from "@/components/RevenuePartitionForm";
 import { TextPetition } from "@/components/TextPetition";
+import { downloadBlob } from "@/lib/criminal-docx";
 import { disclaimer, firm } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import { ensureLeadThenLog } from "@/lib/logToolUsage";
 import {
   buildRevenueDraft,
@@ -21,7 +24,7 @@ import {
   type RevenueType,
 } from "@/lib/revenue";
 import { Field, Section, ToolIntro, inputClass } from "@/lib/ui";
-import { downloadBlob } from "@/lib/criminal-docx";
+import { revenueDraftInLanguage } from "@/lib/urduDraft";
 
 const VALID_REVENUE_TYPES = new Set<string>(revenueOptions.map((o) => o.id));
 
@@ -70,8 +73,12 @@ function RevenueApplicationsWriterInner() {
 
   const [partition, setPartition] = useState<PartitionAppData>(() => emptyPartitionAppData());
   const [partitionErrors, setPartitionErrors] = useState<PartitionValidationErrors>({});
+  const [language, setLanguage] = useState<DraftLanguage>("en");
 
-  const draft = useMemo(() => buildRevenueDraft(form), [form]);
+  const draft = useMemo(
+    () => revenueDraftInLanguage(buildRevenueDraft(form), form, language),
+    [form, language],
+  );
   const partitionDraft = useMemo(
     () => buildRevenuePartitionDraft(partition),
     [partition],
@@ -129,19 +136,22 @@ function RevenueApplicationsWriterInner() {
       <div className="screen-grid mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         <div className="no-print grid gap-4">
           <Section title="Kind of proceeding">
-            <Field label="Dropdown">
-              <select
-                className={inputClass}
-                value={form.appType}
-                onChange={(e) => update("appType", e.target.value as RevenueForm["appType"])}
-              >
-                {revenueOptions.map((o) => (
-                  <option key={o.id} value={o.id}>
-                    {o.label}
-                  </option>
-                ))}
-              </select>
-            </Field>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Dropdown">
+                <select
+                  className={inputClass}
+                  value={form.appType}
+                  onChange={(e) => update("appType", e.target.value as RevenueForm["appType"])}
+                >
+                  {revenueOptions.map((o) => (
+                    <option key={o.id} value={o.id}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <LanguageSelect value={language} onChange={setLanguage} />
+            </div>
           </Section>
 
           {isPartition ? (
@@ -340,14 +350,19 @@ function RevenueApplicationsWriterInner() {
                 </button>
               </div>
               <CourtPleadingPreview
-                title="Application for Partition of Agricultural Land under Section 135 LRA"
+                title={
+                  language === "ur"
+                    ? "لینڈ ریونیو ایکٹ کی دفعہ ۱۳۵ کے تحت زرعی تقسیم کی درخواست"
+                    : "Application for Partition of Agricultural Land under Section 135 LRA"
+                }
                 content={partitionDraft}
                 lawyerName={firm.advocate}
                 firmAddress={firm.officeAddress}
+                language={language}
               />
             </div>
           ) : (
-            <TextPetition {...draft} />
+            <TextPetition {...draft} language={language} />
           )}
         </div>
       </div>

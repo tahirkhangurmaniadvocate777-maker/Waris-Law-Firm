@@ -1,5 +1,10 @@
 import { firm } from "@/lib/firm";
 import {
+  dirAttr,
+  petitionChrome,
+  type DraftLanguage,
+} from "@/lib/language";
+import {
   formatPldGroundsParagraphs,
   type PldCitations,
 } from "@/lib/types/drafting";
@@ -12,9 +17,9 @@ export function TextPetition({
   rightParty,
   rightRole,
   causeTitle,
-  shewethLabel = "RESPECTFULLY SHEWETH:",
+  shewethLabel,
   paragraphs,
-  prayerHeading = "PRAYER:",
+  prayerHeading,
   prayerIntro,
   prayerItems,
   prayerOutro,
@@ -23,6 +28,7 @@ export function TextPetition({
   lawyerLines = [firm.designation],
   verificationText,
   pld_citations,
+  language = "en",
 }: {
   courtLine: string;
   suitLine: string;
@@ -43,12 +49,21 @@ export function TextPetition({
   verificationText: string;
   /** Optional PLD / authority citations rendered under Grounds. */
   pld_citations?: PldCitations;
+  language?: DraftLanguage;
 }) {
+  const chrome = petitionChrome(language);
   const showVerification = Boolean(verificationText.trim());
   const grounds = formatPldGroundsParagraphs(pld_citations);
+  const sheweth = shewethLabel ?? chrome.sheweth;
+  const prayer = prayerHeading ?? chrome.prayer;
 
   return (
-    <article className="petition-sheet" id="petition-print">
+    <article
+      className="petition-sheet"
+      id="petition-print"
+      dir={dirAttr(language)}
+      lang={language === "ur" ? "ur" : "en"}
+    >
       <h1 className="petition-court">{courtLine}</h1>
       <hr className="petition-rule" />
       <p className="petition-suitno">{suitLine}</p>
@@ -62,7 +77,7 @@ export function TextPetition({
         <p className="party-role">... {leftRole}</p>
       </div>
 
-      <p className="versus">VERSUS</p>
+      <p className="versus">{chrome.versus}</p>
 
       <div className="party">
         <div>
@@ -74,7 +89,7 @@ export function TextPetition({
       </div>
 
       <h2 className="cause-title">{causeTitle}</h2>
-      <p className="sheweth">{shewethLabel}</p>
+      <p className="sheweth">{sheweth}</p>
       {paragraphs.map((para, index) => (
         <p key={index} className="pleading-para">
           {para}
@@ -83,7 +98,7 @@ export function TextPetition({
 
       {grounds.length > 0 ? (
         <>
-          <p className="prayer-heading">GROUNDS:</p>
+          <p className="prayer-heading">{chrome.grounds}</p>
           {grounds.map((para) => (
             <p key={para} className="pleading-para">
               {para}
@@ -92,7 +107,7 @@ export function TextPetition({
         </>
       ) : null}
 
-      <p className="prayer-heading">{prayerHeading}</p>
+      <p className="prayer-heading">{prayer}</p>
       <p className="prayer-intro">{prayerIntro}</p>
       <ul className="prayer-list">
         {prayerItems.map((item) => (
@@ -107,7 +122,7 @@ export function TextPetition({
         <div className="through">
           <p>
             <strong>
-              Through Counsel: {lawyerName || firm.advocate}, {firm.designation}
+              {chrome.throughCounsel} {lawyerName || firm.advocate}, {firm.designation}
             </strong>
           </p>
           {lawyerLines.map((line) => (
@@ -118,7 +133,7 @@ export function TextPetition({
 
       {showVerification ? (
         <>
-          <p className="verify-heading">VERIFICATION:</p>
+          <p className="verify-heading">{chrome.verification}</p>
           <p className="pleading-para">{verificationText}</p>
           <div className="sign-block">
             <p className="sign-line">_________________</p>

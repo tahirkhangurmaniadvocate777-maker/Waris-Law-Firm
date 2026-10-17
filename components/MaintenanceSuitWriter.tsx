@@ -1,8 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { PetitionPreview } from "@/components/PetitionPreview";
 import { disclaimer, firm } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import {
   emptyMaintenanceForm,
   formatPkr,
@@ -39,11 +41,17 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-export function MaintenanceSuitWriter() {
+export function MaintenanceSuitWriter({
+  language: languageProp,
+}: {
+  language?: DraftLanguage;
+} = {}) {
   const [form, setForm] = useState<MaintenanceForm>(() =>
     emptyMaintenanceForm(firm.advocate, firm.defaultCourt),
   );
   const [totalTouched, setTotalTouched] = useState(false);
+  const [languageLocal, setLanguageLocal] = useState<DraftLanguage>("en");
+  const language = languageProp ?? languageLocal;
 
   const suggestion = useMemo(
     () => suggestPastTotal(form.pastStart, form.pastEnd, form.pastRate),
@@ -91,6 +99,11 @@ export function MaintenanceSuitWriter() {
 
       <div className="screen-grid mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         <div className="no-print grid gap-4">
+          {languageProp == null ? (
+            <Section title="Draft language">
+              <LanguageSelect value={languageLocal} onChange={setLanguageLocal} />
+            </Section>
+          ) : null}
           <Section title="Court and counsel">
             <Field label="Family Court at" hint="Printed after “Learned Family Judge”.">
               <input
@@ -364,7 +377,7 @@ export function MaintenanceSuitWriter() {
         </div>
 
         <div className="print-stage lg:sticky lg:top-6">
-          <PetitionPreview form={form} />
+          <PetitionPreview form={form} language={language} />
         </div>
       </div>
     </main>

@@ -1,10 +1,15 @@
 import { downloadBlob } from "@/lib/criminal-docx";
 import type { buildFamilyDraft } from "@/lib/family";
+import { petitionChrome, type DraftLanguage } from "@/lib/language";
 
 export type FamilyDraft = ReturnType<typeof buildFamilyDraft>;
 
 /** Flatten a structured family draft into CourtPleadingPreview body text. */
-export function familyDraftToPleadingContent(draft: FamilyDraft): string {
+export function familyDraftToPleadingContent(
+  draft: FamilyDraft,
+  language: DraftLanguage = "en",
+): string {
+  const chrome = petitionChrome(language);
   const left = draft.leftParty.join("\n");
   const right = draft.rightParty.join("\n");
   const paras = draft.paragraphs.join("\n\n");
@@ -18,20 +23,20 @@ export function familyDraftToPleadingContent(draft: FamilyDraft): string {
     left,
     `... ${draft.leftRole}`,
     "",
-    "VERSUS",
+    chrome.versus,
     "",
     right,
     `... ${draft.rightRole}`,
     "",
-    "RESPECTFULLY SHEWETH:",
+    chrome.sheweth,
     "",
     paras,
     "",
-    "PRAYER:",
+    chrome.prayer,
     draft.prayerIntro,
     prayers,
     "",
-    "VERIFICATION:",
+    chrome.verification,
     draft.verificationText,
   ].join("\n");
 }
