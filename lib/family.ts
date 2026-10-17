@@ -7,6 +7,11 @@ import {
   textOrBlank,
   todayIso,
 } from "@/lib/format";
+import type { DraftLanguage } from "@/lib/language";
+import {
+  familyDraftChromeUrdu,
+  familyParagraphsUrdu,
+} from "@/lib/urduDraft";
 
 export type FamilySuitType =
   | "khula"
@@ -217,14 +222,58 @@ export function annexureTotalsFromItems(items: FamilyAnnexureItems) {
 
 export function buildFamilyDraft(
   form: FamilyForm,
-  options?: { annexureItems?: FamilyAnnexureItems },
+  options?: { annexureItems?: FamilyAnnexureItems; language?: DraftLanguage },
 ) {
+  const language = options?.language ?? "en";
   const year = suitYear(form.verificationDate);
   const suitNo = form.suitNumber.trim() || "___________";
   const courtLine = `IN THE COURT OF THE LEARNED FAMILY JUDGE, ${textOrBlank(form.courtLocation)}`;
 
-  if (form.suitType === "khula") {
+  const localize = <T extends {
+    courtLine: string;
+    suitLine: string;
+    leftRole: string;
+    rightRole: string;
+    signRole: string;
+    causeTitle: string;
+    prayerIntro: string;
+    verificationText: string;
+    paragraphs: string[];
+    prayerItems: string[];
+  }>(draft: T): T => {
+    if (language !== "ur") return draft;
+    const totalsHint =
+      form.suitType === "dowry"
+        ? formatPkr(form.totalDowryValue)
+        : undefined;
+    const chrome = familyDraftChromeUrdu(draft, form);
     return {
+      ...chrome,
+      paragraphs: familyParagraphsUrdu(form, totalsHint),
+      prayerItems:
+        form.suitType === "khula"
+          ? [
+              "مدعیہ کے حق میں مدعا علیہ کے خلاف خلع کی بنیاد پر تنسیخِ نکاح کی ڈگری صادر کی جائے۔",
+              "کوئی اور مناسب ریلیف جو عدالت مناسب سمجھے عطا کیا جائے۔",
+            ]
+          : form.suitType === "dower-maintenance"
+            ? [
+                `نکاح نامہ کے مطابق بقایا مہر ${textOrBlank(form.dowerDescription)} دلایا جائے۔`,
+                `نان و نفقہ ماضی بمبلغ ${formatPkr(form.totalPast)} روپے دلایا جائے۔`,
+                `مستقبل میں نان و نفقہ مدعیہ بمادہ ${formatPkr(form.wifeFutureRate)} اور ہر نابالغ بمادہ ${formatPkr(form.childFutureRate)} روپے مع دس فیصد سالانہ اضافہ مقرر کیا جائے۔`,
+                "کوئی اور مناسب ریلیف عطا کیا جائے۔",
+              ]
+            : form.suitType === "dowry"
+              ? [
+                  `سامانِ جہیز و بری یا متبادل مالیت ${totalsHint || formatPkr(form.totalDowryValue)} روپے دلائی جائے۔`,
+                  "کوئی اور مناسب ریلیف عطا کیا جائے۔",
+                ]
+              : draft.prayerItems,
+    };
+  };
+
+  if (form.suitType === "khula") {
+    return localize({
       courtLine,
       suitLine: `Family Suit No. ${suitNo} / ${year}`,
       leftParty: partyBlock(form, "plaintiff"),
@@ -252,11 +301,11 @@ export function buildFamilyDraft(
       lawyerName: textOrBlank(form.lawyerName),
       verificationText: `Verified on Oath at ${textOrBlank(form.courtLocation)} on this ${formatLongDate(form.verificationDate)}, that the contents of paragraphs 1 to 8 are true and correct to the best of my knowledge and belief, and the rest are based on information received.`,
       annexure: null as null | ReturnType<typeof buildAnnexure>,
-    };
+    });
   }
 
   if (form.suitType === "dower-maintenance") {
-    return {
+    return localize({
       courtLine,
       suitLine: `Family Suit No. ${suitNo} / ${year}`,
       leftParty: partyBlock(form, "plaintiff"),
@@ -288,7 +337,7 @@ export function buildFamilyDraft(
       lawyerName: textOrBlank(form.lawyerName),
       verificationText: `Verified on Oath at ${textOrBlank(form.courtLocation)} on this ${formatLongDate(form.verificationDate)}, that the contents of paragraphs 1 to 9 are true and correct to the best of my knowledge and belief, and the rest are based on information received.`,
       annexure: null,
-    };
+    });
   }
 
   if (form.suitType === "dowry") {
@@ -299,7 +348,7 @@ export function buildFamilyDraft(
     const totalDowry = form.totalDowryValue.trim()
       ? formatPkr(form.totalDowryValue)
       : formatPkr(String(totals.jahez || ""));
-    return {
+    return localize({
       courtLine,
       suitLine: `Family Suit No. ${suitNo} / ${year}`,
       leftParty: partyBlock(form, "plaintiff"),
@@ -328,11 +377,11 @@ export function buildFamilyDraft(
       annexure: liveItems
         ? buildAnnexureFromItems(form, liveItems)
         : buildAnnexure(form),
-    };
+    });
   }
 
   if (form.suitType === "custody") {
-    return {
+    return localize({
       courtLine: `IN THE COURT OF THE LEARNED FAMILY JUDGE / GUARDIAN JUDGE, ${textOrBlank(form.courtLocation)}`,
       suitLine: `Guardian Petition No. ${suitNo} / ${year}`,
       leftParty: partyBlock(form, "plaintiff"),
@@ -358,11 +407,11 @@ export function buildFamilyDraft(
       lawyerName: textOrBlank(form.lawyerName),
       verificationText: `Verified on Oath at ${textOrBlank(form.courtLocation)} on this ${formatLongDate(form.verificationDate)}, that the contents of paragraphs 1 to 6 are true and correct to the best of my knowledge and belief, and the rest are based on information received.`,
       annexure: null,
-    };
+    });
   }
 
   // restitution
-  return {
+  return localize({
     courtLine,
     suitLine: `Family Suit No. ${suitNo} / ${year}`,
     leftParty: partyBlock(form, "plaintiff"),
@@ -389,7 +438,7 @@ export function buildFamilyDraft(
     lawyerName: textOrBlank(form.lawyerName),
     verificationText: `Verified on Oath at ${textOrBlank(form.courtLocation)} on this ${formatLongDate(form.verificationDate)}, that the contents of paragraphs 1 to 7 are true and correct to the best of my knowledge and belief, and the rest are based on information received.`,
     annexure: null,
-  };
+  });
 }
 
 function buildAnnexure(form: FamilyForm) {

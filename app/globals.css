@@ -106,6 +106,25 @@ body {
   box-shadow: 0 16px 40px rgba(16, 32, 51, 0.12);
 }
 
+.petition-sheet[dir="rtl"],
+.court-pleading-sheet[dir="rtl"] {
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting",
+    "Times New Roman", Times, serif;
+  text-align: right;
+}
+
+.petition-sheet[dir="rtl"] .petition-court,
+.petition-sheet[dir="rtl"] .petition-suitno,
+.petition-sheet[dir="rtl"] .versus,
+.petition-sheet[dir="rtl"] .cause-title,
+.court-pleading-sheet[dir="rtl"] h2 {
+  text-align: center;
+}
+
+.petition-sheet[dir="rtl"] .cause-title {
+  text-transform: none;
+}
+
 /* Court pleading paper — amber on screen, stamp margin for filing */
 .court-pleading-sheet {
   font-family: "Times New Roman", Times, "Palatino Linotype", serif;

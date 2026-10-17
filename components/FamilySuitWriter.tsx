@@ -8,6 +8,7 @@ import FamilyAnnexureBLoop, {
   type DowryItem,
 } from "@/components/FamilyAnnexureBLoop";
 import { FamilyDynamicForm } from "@/components/FamilyDynamicForm";
+import { LanguageSelect } from "@/components/LanguageSelect";
 import { MaintenanceSuitWriter } from "@/components/MaintenanceSuitWriter";
 import { TextPetition } from "@/components/TextPetition";
 import { familySchemaKeyForSuit } from "@/lib/config/familyFormSchema";
@@ -26,6 +27,7 @@ import {
   familyDraftToPleadingContent,
 } from "@/lib/familyPleading";
 import { disclaimer } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import { ensureLeadThenLog } from "@/lib/logToolUsage";
 import { Field, Section, ToolIntro, inputClass } from "@/lib/ui";
 
@@ -49,16 +51,17 @@ function FamilySuitWriterInner() {
   const [annexureItems, setAnnexureItems] = useState<FamilyAnnexureItems | null>(
     null,
   );
+  const [language, setLanguage] = useState<DraftLanguage>("en");
 
   const draft = useMemo(
     () =>
-      buildFamilyDraft(
-        form,
-        form.suitType === "dowry" && annexureItems
+      buildFamilyDraft(form, {
+        language,
+        ...(form.suitType === "dowry" && annexureItems
           ? { annexureItems }
-          : undefined,
-      ),
-    [form, annexureItems],
+          : {}),
+      }),
+    [form, annexureItems, language],
   );
   const schemaKey = familySchemaKeyForSuit(form.suitType);
   const useSchemaForm = schemaKey !== null;
@@ -123,49 +126,21 @@ function FamilySuitWriterInner() {
     }
   }
 
-  if (form.suitType === "maintenance-only") {
-    return (
-      <div>
-        <div className="no-print mx-auto max-w-6xl px-5 pt-8">
-          <Field label="Kind of family suit">
-            <select
-              className={inputClass}
-              value={form.suitType}
-              onChange={(e) => update("suitType", e.target.value as FamilyForm["suitType"])}
-            >
-              {familySuitOptions.map((o) => (
-                <option key={o.id} value={o.id}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
-          </Field>
-        </div>
-        <MaintenanceSuitWriter />
-      </div>
-    );
-  }
-
   const pleadingContent = useMemo(() => {
     if (!useSchemaForm) return "";
-    let body = familyDraftToPleadingContent(draft);
+    let body = familyDraftToPleadingContent(draft, language);
     if (form.suitType === "dowry" && draft.annexure) {
       body = `${body}\n\n${annexureToPleadingContent(draft.annexure)}`;
     }
     return body;
-  }, [useSchemaForm, draft, form.suitType]);
+  }, [useSchemaForm, draft, form.suitType, language]);
 
-  return (
-    <main className="mx-auto max-w-6xl px-5 py-8">
-      <ToolIntro eyebrow="Family Suit Writer" title="Family Court pleadings">
-        <p>Khula, dower & maintenance, dowry with Annexure-B, custody, and restitution — print ready.</p>
-        <p className="text-ink/70">{disclaimer}</p>
-      </ToolIntro>
-
-      <div className="screen-grid mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
-        <div className="no-print grid gap-4">
-          <Section title="Kind of suit">
-            <Field label="Dropdown">
+  if (form.suitType === "maintenance-only") {
+    return (
+      <div>
+        <div className="no-print mx-auto max-w-6xl px-5 pt-8">
+          <div className="grid max-w-xl gap-4 sm:grid-cols-2">
+            <Field label="Kind of family suit">
               <select
                 className={inputClass}
                 value={form.suitType}
@@ -178,6 +153,40 @@ function FamilySuitWriterInner() {
                 ))}
               </select>
             </Field>
+            <LanguageSelect value={language} onChange={setLanguage} />
+          </div>
+        </div>
+        <MaintenanceSuitWriter language={language} />
+      </div>
+    );
+  }
+
+  return (
+    <main className="mx-auto max-w-6xl px-5 py-8">
+      <ToolIntro eyebrow="Family Suit Writer" title="Family Court pleadings">
+        <p>Khula, dower & maintenance, dowry with Annexure-B, custody, and restitution — print ready.</p>
+        <p className="text-ink/70">{disclaimer}</p>
+      </ToolIntro>
+
+      <div className="screen-grid mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+        <div className="no-print grid gap-4">
+          <Section title="Kind of suit">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field label="Dropdown">
+                <select
+                  className={inputClass}
+                  value={form.suitType}
+                  onChange={(e) => update("suitType", e.target.value as FamilyForm["suitType"])}
+                >
+                  {familySuitOptions.map((o) => (
+                    <option key={o.id} value={o.id}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+              </Field>
+              <LanguageSelect value={language} onChange={setLanguage} />
+            </div>
             {!useSchemaForm ? (
               <>
                 <Field label="Court location">
@@ -560,6 +569,7 @@ function FamilySuitWriterInner() {
               title={draft.causeTitle}
               content={pleadingContent}
               lawyerName={draft.lawyerName}
+              language={language}
               pld_citations={caseLawCitations
                 .split("\n")
                 .map((line) => line.trim())
@@ -580,6 +590,7 @@ function FamilySuitWriterInner() {
               signRole={draft.signRole}
               lawyerName={draft.lawyerName}
               verificationText={draft.verificationText}
+              language={language}
             />
           )}
           {draft.annexure ? <AnnexureBPreview annexure={draft.annexure} /> : null}

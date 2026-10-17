@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import CourtPleadingPreview from "@/components/CourtPleadingPreview";
 import { firm, FIRM_METADATA } from "@/lib/firm";
+import type { DraftLanguage } from "@/lib/language";
 import { ensureLeadThenLog } from "@/lib/logToolUsage";
 import { Field, Section, inputClass } from "@/lib/ui";
 
@@ -67,8 +68,53 @@ export function validateTemporaryInjunctionForm(
 /** Formal Order 39 Rules 1 & 2 compiled pleading (user master text). */
 export function compileTemporaryInjunctionPleading(
   formData: TemporaryInjunctionFormData,
+  language: DraftLanguage = "en",
 ): string {
   const currentYear = new Date().getFullYear();
+
+  if (language === "ur") {
+    const causeDateLine = formData.cause_date.trim()
+      ? ` سببِ دعویٰ مورخہ ${formData.cause_date.trim()} کو پیدا ہوا۔`
+      : "";
+    const propertyExtra = formData.property_description.trim()
+      ? ` جائیداد کی مزید تفصیل: ${formData.property_description.trim()}۔`
+      : "";
+    return `
+عدالت جناب سینئر سول جج صاحب، ${formData.court_city}
+
+دیوانی متفرق درخواست نمبر _________ / ${currentYear}
+ضمن دیوانی مقدمہ نمبر _________ / ${currentYear}
+
+${formData.plaintiff_name || "_______________"} ولد ${formData.plaintiff_parentage || "_______________"}
+                                                                    ...درخواست گزار
+                                    بنام
+${formData.defendant_name || "_______________"}
+                                                                    ...مسئول علیہ
+
+درخواست زیر آرڈر ۳۹ قواعد ۱ و ۲ بمع دفعہ ۱۵۱ ضابطہ دیوانی ۱۹۰۸ برائے عارضی حکم امتناعی
+
+مستدعی دست بستہ حسبِ ذیل ہے:
+
+۱۔ یہ کہ درخواست گزار نے مسئول علیہ کے خلاف مستقل حکم امتناعی کا مقدمہ دائر کیا ہے جس کے مندرجات اس درخواست کا حصہ سمجھے جائیں۔
+
+۲۔ یہ کہ درخواست گزار خسرہ نمبر ${formData.khasra_number || "_______________"}، کھوات نمبر ${formData.khewat_number || "_______________"}، موضع ${formData.court_city || "_______________"} کی جائیداد کا قانونی مالک و قابض ہے۔${propertyExtra}
+
+۳۔ یہ کہ مسئول علیہ ${formData.threat_description || "_______________"} کی کوشش کر رہا ہے جو درخواست گزار کے حقوق کی خلاف ورزی ہے۔${causeDateLine}
+
+۴۔ یہ کہ درخواست گزار کا قوی بادی النظر مقدمہ ہے اور سہولت کا پلڑا اس کے حق میں ہے۔
+
+۵۔ یہ کہ اگر مسئول علیہ کو روکا نہ گیا تو درخواست گزار کو ناقابل تلافی نقصان ہوگا۔
+
+استدعا:
+لہٰذا استدعا ہے کہ عارضی حکم امتناعی صادر کر کے مسئول علیہ کو متنازعہ جائیداد میں مداخلت سے روکا جائے۔
+
+درخواست گزار بذریعہ وکیل:
+${FIRM_METADATA.advocateName}
+${FIRM_METADATA.title}
+${FIRM_METADATA.firmName.split("/")[0]?.trim() || FIRM_METADATA.firmName}, ${formData.court_city || firm.defaultCourt}
+`.trim();
+  }
+
   const causeDateLine = formData.cause_date.trim()
     ? ` The cause of action accrued on ${formData.cause_date.trim()}.`
     : "";
@@ -115,17 +161,21 @@ ${FIRM_METADATA.firmName.split("/")[0]?.trim() || FIRM_METADATA.firmName}, ${for
 type Props = {
   /** When true, omit outer page chrome (used inside CivilSuitWriter). */
   embedded?: boolean;
+  language?: DraftLanguage;
 };
 
-export function TemporaryInjunctionForm({ embedded = false }: Props) {
+export function TemporaryInjunctionForm({
+  embedded = false,
+  language = "en",
+}: Props) {
   const [formData, setFormData] = useState<TemporaryInjunctionFormData>(() =>
     emptyTemporaryInjunctionForm(),
   );
   const [error, setError] = useState("");
 
   const compiledApplicationText = useMemo(
-    () => compileTemporaryInjunctionPleading(formData),
-    [formData],
+    () => compileTemporaryInjunctionPleading(formData, language),
+    [formData, language],
   );
 
   function update<K extends keyof TemporaryInjunctionFormData>(
@@ -266,10 +316,15 @@ export function TemporaryInjunctionForm({ embedded = false }: Props) {
   const previewPanel = (
     <div className="print-stage lg:sticky lg:top-6">
       <CourtPleadingPreview
-        title="Application for Temporary Injunction under Order 39 Rules 1 & 2 CPC"
+        title={
+          language === "ur"
+            ? "آرڈر ۳۹ قواعد ۱ و ۲ کے تحت عارضی حکم امتناعی کی درخواست"
+            : "Application for Temporary Injunction under Order 39 Rules 1 & 2 CPC"
+        }
         content={compiledApplicationText}
         lawyerName={FIRM_METADATA.advocateName}
         firmAddress={FIRM_METADATA.officeAddress}
+        language={language}
       />
     </div>
   );
